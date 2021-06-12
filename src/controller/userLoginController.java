@@ -20,7 +20,7 @@ public class userLoginController {
     public Text txtDate;
 
     public void initialize(){
-        MaterialUI.paintTextFields(txtPassword,txtUserName);
+        //MaterialUI.paintTextFields();
 
         MaterialUI.drawBorder(pneBody);
         txtDate.setText(DateAndTime.DateToday());

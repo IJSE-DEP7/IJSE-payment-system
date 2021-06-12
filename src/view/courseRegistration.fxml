@@ -1,14 +1,105 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="controller.courseRegistrationController"
-            prefHeight="400.0" prefWidth="600.0">
-
+<AnchorPane prefHeight="470.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.courseRegistrationController">
+   <children>
+      <AnchorPane>
+         <children>
+            <Label fx:id="lblTitle" layoutX="235.0" layoutY="16.0" text="Course Registration">
+               <font>
+                  <Font name="Ubuntu Bold" size="24.0" />
+               </font>
+            </Label>
+            <Label opacity="0.58" prefHeight="65.0" prefWidth="700.0" style="-fx-background-color: Black;" />
+            <Circle fill="DODGERBLUE" layoutX="528.0" layoutY="31.0" radius="24.0" stroke="#2c2828" strokeType="INSIDE" style="-fx-fill: blue;" />
+            <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="571.0" layoutY="16.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../assests/Menu.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="626.0" layoutY="16.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../assests/minimize.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="656.0" layoutY="16.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../assests/close.png" />
+               </image>
+            </ImageView>
+            <Text fill="WHITE" layoutX="518.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" text="B">
+               <font>
+                  <Font size="30.0" />
+               </font>
+            </Text>
+            <ImageView fitHeight="50.0" fitWidth="200.0" layoutX="14.0" layoutY="8.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="15.0">
+               <image>
+                  <Image url="@../assests/ijse.png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="pneSideBar" layoutX="2.0" layoutY="91.0" prefHeight="405.0" prefWidth="198.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="65.0">
+         <children>
+            <Button layoutX="4.0" layoutY="22.0" mnemonicParsing="false" opacity="0.58" prefHeight="42.0" prefWidth="188.0" style="-fx-background-color: Black;" text="DASH BOARD" textFill="#f5f0f0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="2.0" />
+            <Button layoutX="7.0" layoutY="56.0" mnemonicParsing="false" opacity="0.58" prefHeight="42.0" prefWidth="188.0" style="-fx-background-color: black;" text="COURSE REGISTER" textFill="WHITE" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="46.0" />
+            <Button layoutX="5.0" layoutY="105.0" mnemonicParsing="false" opacity="0.58" prefHeight="42.0" prefWidth="188.0" style="-fx-background-color: black;" text="FEES PAYMENT" textFill="WHITE" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="91.0" />
+            <Button layoutY="158.0" mnemonicParsing="false" opacity="0.58" prefHeight="42.0" prefWidth="188.0" style="-fx-background-color: black;" text="TRANSACTION DETAILS" textFill="WHITE" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="136.0" />
+            <Button layoutY="210.0" mnemonicParsing="false" opacity="0.58" prefHeight="42.0" prefWidth="188.0" style="-fx-background-color: black;" text="SEARCH STUDENTS" textFill="WHITE" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="181.0" />
+            <Button layoutX="5.0" layoutY="253.0" mnemonicParsing="false" opacity="0.58" prefHeight="42.0" prefWidth="188.0" style="-fx-background-color: black;" text="MANAGE STUDENTS" textFill="WHITE" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="226.0" />
+            <Button layoutX="7.0" layoutY="303.0" mnemonicParsing="false" opacity="0.58" prefHeight="42.0" prefWidth="188.0" style="-fx-background-color: black;" text="MANAGE USERS" textFill="WHITE" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="271.0" />
+            <Button layoutY="352.0" mnemonicParsing="false" opacity="0.58" prefHeight="42.0" prefWidth="188.0" style="-fx-background-color: black;" text="MANAGE EXPENSES" textFill="WHITE" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="316.0" />
+            <Button layoutY="395.0" mnemonicParsing="false" opacity="0.58" prefHeight="42.0" prefWidth="188.0" style="-fx-background-color: black;" text="EXIT" textFill="WHITE" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="361.0" />
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="pneBody" accessibleText="Course Name" layoutX="233.0" layoutY="74.0" prefHeight="405.0" prefWidth="500.0" style="-fx-background-color: white;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="200.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="65.0">
+         <children>
+            <Label layoutX="14.0" layoutY="14.0" text="Student Id :" AnchorPane.leftAnchor="15.0" AnchorPane.topAnchor="15.0">
+               <font>
+                  <Font name="Ubuntu Bold" size="13.0" />
+               </font>
+            </Label>
+            <Label fx:id="lblStudentId" layoutX="94.0" layoutY="15.0" text="S-0001">
+               <font>
+                  <Font name="Ubuntu Bold" size="13.0" />
+               </font>
+            </Label>
+            <Label fx:id="lblDate" layoutX="242.0" layoutY="14.0" text="05 - June  - 2021" AnchorPane.leftAnchor="240.0" AnchorPane.topAnchor="15.0">
+               <font>
+                  <Font name="Ubuntu Bold" size="13.0" />
+               </font>
+            </Label>
+            <Label fx:id="lbltime" layoutX="422.0" layoutY="15.0" text="15 : 55 : 50" AnchorPane.topAnchor="15.0">
+               <font>
+                  <Font name="Ubuntu Bold" size="13.0" />
+               </font>
+            </Label>
+            <AnchorPane layoutX="12.0" layoutY="50.0" prefHeight="45.0" prefWidth="150.0">
+               <children>
+                  <ComboBox fx:id="cmbCourse" accessibleText="Course Name" layoutY="26.0" prefHeight="25.0" prefWidth="140.0" promptText="Select Course" style="-fx-background-color: white;" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="15.0" />
+               </children>
+            </AnchorPane>
+            <AnchorPane layoutX="170.0" layoutY="50.0" prefHeight="46.0" prefWidth="316.0">
+               <children>
+                  <ComboBox fx:id="cmbQualification" accessibleText="Highest Qualification" layoutY="26.0" prefHeight="25.0" prefWidth="140.0" promptText="Select Student Highest Qualification" style="-fx-background-color: white;" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="15.0" />
+               </children>
+            </AnchorPane>
+            <AnchorPane layoutX="15.0" layoutY="116.0" prefHeight="45.0" prefWidth="280.0">
+               <children>
+                  <TextField fx:id="lblName" accessibleText="Student Name" layoutY="10.0" promptText="Enter Student Name " style="-fx-background-color: white;" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="15.0" />
+               </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+   </children>
 </AnchorPane>
