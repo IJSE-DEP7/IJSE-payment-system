@@ -22,8 +22,7 @@ public class AppInitializer extends Application {
         primaryStage.setScene(loginScene);
         loginScene.setFill(Color.TRANSPARENT);
         primaryStage.initStyle(StageStyle.TRANSPARENT);
-        userLoginController ctrl = fxmlLoader.getController();
-        ctrl.paintTextFields();
+
         primaryStage.show();
 
     }
