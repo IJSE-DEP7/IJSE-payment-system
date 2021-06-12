@@ -35,12 +35,12 @@
                   <Font name="Ubuntu Bold" size="24.0" />
                </font>
             </Text>
-            <Text fx:id="txtDate" layoutX="291.0" layoutY="26.0" strokeType="OUTSIDE" strokeWidth="0.0" text="05-June-2021">
+            <Text fx:id="txtDate" layoutX="255.0" layoutY="25.0" strokeType="OUTSIDE" strokeWidth="0.0" text="05-June-2021">
                <font>
                   <Font name="Ubuntu Bold" size="14.0" />
                </font>
             </Text>
-            <Text fx:id="txtTime" layoutX="404.0" layoutY="26.0" strokeType="OUTSIDE" strokeWidth="0.0" text="15  : 55 : 50">
+            <Text fx:id="txtTime" layoutX="413.0" layoutY="24.0" strokeType="OUTSIDE" strokeWidth="0.0" text="15  : 55 : 50">
                <font>
                   <Font name="Ubuntu Bold" size="14.0" />
                </font>
