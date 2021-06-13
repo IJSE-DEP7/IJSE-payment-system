@@ -12,10 +12,16 @@ public class courseRegistrationController {
     public AnchorPane pneBody;
     public ComboBox cmbCourse;
     public ComboBox cmbQualification;
-    public TextField lblName;
+    public TextField txtName;
+    public TextField txtPlacementExamMarks;
+    public TextField txtAddress;
+    public TextField txtCommencementDate;
+    public TextField txtDateOfBirth;
+    public TextField txtEmail;
+    public TextField txtPhoto;
 
     public void initialize(){
-        MaterialUI.paintTextFields(lblName);
+        MaterialUI.paintTextFields(txtName,txtPlacementExamMarks,txtAddress,txtCommencementDate,txtDateOfBirth,txtEmail,txtPhoto);
 
         MaterialUI.drawBorder(pneBody);
         MaterialUI.drawBorder(pneSideBar);
