@@ -1,0 +1,6 @@
+#tblDashBoard .column-header{
+    -fx-background-color: rgba(0,0,0,0.4);
+    -fx-size: 60px;
+    -fx-font-family: "Ubuntu";
+    -fx-font-size: 14px;
+}

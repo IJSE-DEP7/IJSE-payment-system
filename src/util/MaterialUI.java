@@ -10,6 +10,25 @@ import javafx.scene.text.Text;
 
 public class MaterialUI {
 
+    public static void paintComboBox(ComboBox... comboBoxes){
+        for(ComboBox cmb : comboBoxes) {
+            AnchorPane pneComboContainer = (AnchorPane) cmb.getParent();
+            String floatedText = cmb.getAccessibleText();
+            Canvas canvas = new Canvas(pneComboContainer.getPrefWidth(), pneComboContainer.getPrefHeight());
+            pneComboContainer.getChildren().add(0, canvas);
+            GraphicsContext ctx = canvas.getGraphicsContext2D();
+
+            redrawTextFieldCanvas(canvas, ctx, floatedText, false);
+
+            cmb.focusedProperty().addListener((observable, oldValue, newValue) -> {
+                redrawTextFieldCanvas(canvas, ctx, floatedText, newValue);
+            });
+            pneComboContainer.setOnMouseClicked(event -> {
+                cmb.requestFocus();
+            });
+        }
+    }
+
     public static void paintTextFields(TextField... textFields){
 
         for(TextField txt : textFields) {

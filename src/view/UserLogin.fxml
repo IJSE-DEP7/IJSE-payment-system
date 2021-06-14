@@ -10,7 +10,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="400.0" prefWidth="500.0" style="-fx-background-color: White;" stylesheets="@css/userLogin.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.userLoginController">
+<AnchorPane prefHeight="400.0" prefWidth="500.0" style="-fx-background-color: White;" stylesheets="@css/userLogin.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.UserLoginController">
    <children>
       <Label opacity="0.58" prefHeight="65.0" prefWidth="500.0" style="-fx-background-color: black;" textAlignment="CENTER" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
       <Label layoutX="189.0" layoutY="18.0" text="User Login">

@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="405.0" prefWidth="500.0" stylesheets="@css/DashBoard.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.DashBoardController">
+    <children>
+        <AnchorPane fx:id="pneBody" accessibleText="Course Name" layoutX="233.0" layoutY="74.0" prefHeight="405.0" prefWidth="500.0" style="-fx-background-color: white;" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0">
+            <children>
+                <Label layoutX="15.0" layoutY="45.0" text="Cash :" textFill="#e10f0f" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="50.0">
+                    <font>
+                        <Font name="Ubuntu Bold" size="18.0" />
+                    </font>
+                </Label>
+                <Label fx:id="lblIncomeCash" layoutX="77.0" layoutY="50.0" text="225, 000" textFill="#e10f0f" AnchorPane.leftAnchor="75.0" AnchorPane.topAnchor="50.0">
+                    <font>
+                        <Font name="Ubuntu Bold" size="18.0" />
+                    </font>
+                </Label>
+                <Label fx:id="lblDate" layoutX="242.0" layoutY="14.0" text="05 - June  - 2021" AnchorPane.leftAnchor="240.0" AnchorPane.topAnchor="15.0">
+                    <font>
+                        <Font name="Ubuntu Bold" size="13.0" />
+                    </font>
+                </Label>
+                <Label fx:id="lbltime" layoutX="422.0" layoutY="15.0" text="15 : 55 : 50" AnchorPane.leftAnchor="410.0" AnchorPane.topAnchor="15.0">
+                    <font>
+                        <Font name="Ubuntu Bold" size="13.0" />
+                    </font>
+                </Label>
+            <Label fx:id="lblDate1" layoutX="32.0" layoutY="48.0" text="Today Transactions" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="30.0">
+               <font>
+                  <Font name="Ubuntu" size="13.0" />
+               </font>
+            </Label>
+            <Label layoutX="181.0" layoutY="50.0" text="Card :" textFill="#e10f0f" AnchorPane.leftAnchor="170.0" AnchorPane.topAnchor="50.0">
+               <font>
+                  <Font name="Ubuntu Bold" size="18.0" />
+               </font>
+            </Label>
+            <Label fx:id="lblIncomeCard" layoutX="225.0" layoutY="50.0" text="225, 000" textFill="#e10f0f">
+               <font>
+                  <Font name="Ubuntu Bold" size="18.0" />
+               </font>
+            </Label>
+            <Label layoutX="339.0" layoutY="50.0" text="Online :" textFill="#e10f0f" AnchorPane.leftAnchor="335.0" AnchorPane.topAnchor="50.0">
+               <font>
+                  <Font name="Ubuntu Bold" size="18.0" />
+               </font>
+            </Label>
+            <Label fx:id="lblIncomeOnline" layoutX="414.0" layoutY="50.0" text="225, 000" textFill="#e10f0f" AnchorPane.leftAnchor="410.0" AnchorPane.topAnchor="50.0">
+               <font>
+                  <Font name="Ubuntu Bold" size="18.0" />
+               </font>
+            </Label>
+            <TableView fx:id="tblDashBoard" layoutX="20.0" layoutY="80.0" prefHeight="313.0" prefWidth="461.0" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="80.0">
+              <columns>
+                <TableColumn  prefWidth="152.0" text="Course" />
+                <TableColumn prefWidth="102.0" text="New Registrations" />
+                  <TableColumn prefWidth="99.0" text="Number Of Payments" />
+                  <TableColumn prefWidth="106.0" text="Total Income" />
+              </columns>
+            </TableView>
+            </children>
+        </AnchorPane>
+    </children>
+</AnchorPane>
