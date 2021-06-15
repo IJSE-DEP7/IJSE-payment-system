@@ -40,7 +40,7 @@ public class UserLoginController {
         Scene loginScene = new Scene(root);
         newStage.setScene(loginScene);
         MainFormController ctrl = fxmlLoader.getController();
-        ctrl.nav("/view/DashBoard.fxml");
+        ctrl.nav("/view/DashBoard.fxml","Dash Board");
         loginScene.setUserData(ctrl);
         newStage.initModality(Modality.WINDOW_MODAL);
         newStage.initOwner(btnLogin.getScene().getWindow());

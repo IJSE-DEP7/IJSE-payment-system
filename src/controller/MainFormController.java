@@ -9,6 +9,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.text.Text;
+import util.MaterialUI;
 
 public class MainFormController {
     public Label lblTitle;
@@ -32,17 +33,17 @@ public class MainFormController {
 
 
     public void initialize(){
-
+        MaterialUI.drawBorder(pneSideBar);
     }
-    public void nav(String url){
+    public void nav(String url,String title){
         try{
             Parent root = FXMLLoader.load(this.getClass().getResource(url));
             pneStage.getChildren().clear();
             pneStage.getChildren().add(root);
+            lblTitle.setText(title);
         }catch(Exception e){
             e.printStackTrace();
         }
-        System.out.println(pneStage);
     }
 
     /*
@@ -96,6 +97,6 @@ public class MainFormController {
     }
 
     private void navigate(String url, String title){
-        nav(url);
+        nav(url,title);
     }
 }

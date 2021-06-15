@@ -69,4 +69,16 @@ public class MaterialUI {
         ctx.setLineWidth(2);
         ctx.strokeRect(1,3,pne.getPrefWidth()-2, pne.getPrefHeight()-4);
     }
+
+    public static void checkBox(TextField... textFields){
+        for(TextField txt : textFields) {
+            txt.textProperty().addListener((observable, oldValue, newValue) -> {
+                if (newValue.length() > 0) {
+                    txt.getParent().getChildrenUnmodifiable().get(2).setVisible(true);
+                } else {
+                    txt.getParent().getChildrenUnmodifiable().get(2).setVisible(false);
+                }
+            });
+        }
+    }
 }

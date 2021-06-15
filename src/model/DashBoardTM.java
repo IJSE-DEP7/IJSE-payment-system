@@ -52,4 +52,14 @@ public class DashBoardTM implements Serializable {
     public void setTotalIncome(String totalIncome) {
         this.totalIncome = totalIncome;
     }
+
+    @Override
+    public String toString() {
+        return "DashBoardTM{" +
+                "course='" + course + '\'' +
+                ", newRegistrations='" + newRegistrations + '\'' +
+                ", numberOfPayments='" + numberOfPayments + '\'' +
+                ", totalIncome='" + totalIncome + '\'' +
+                '}';
+    }
 }

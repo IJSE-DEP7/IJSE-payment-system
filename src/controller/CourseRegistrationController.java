@@ -1,9 +1,11 @@
 package controller;
 
+import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextField;
+import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import util.DateAndTime;
@@ -23,14 +25,23 @@ public class CourseRegistrationController {
     public TextField txtPhoto;
     public Button btnClearAll;
     public Button btnNext;
+    public ImageView chk;
+    public AnchorPane name;
+    //private ImageView ImageView;
+
 
     public void initialize(){
         MaterialUI.paintComboBox(cmbCourse,cmbQualification);
         MaterialUI.paintTextFields(txtName,txtPlacementExamMarks,txtAddress,txtCommencementDate,txtDateOfBirth,txtEmail,txtPhoto);
+        MaterialUI.checkBox(txtName,txtPlacementExamMarks,txtAddress,txtCommencementDate,txtDateOfBirth,txtEmail);
+        MaterialUI.drawBorder(pneBody);
 
-        //MaterialUI.drawBorder(pneBody);
-        //MaterialUI.drawBorder(pneSideBar);
+
+        //System.out.println(name.getChildrenUnmodifiable().get(1));
+
     }
+
+
 
     public void btnClearAll_OnAction(ActionEvent actionEvent) {
     }
@@ -43,10 +54,7 @@ public class CourseRegistrationController {
 
     public void chbPartTime_OnMouseClicked(MouseEvent mouseEvent) {
     }
-
-    
-
-
     public void lblAttachPhoto_OnMouseClicked(MouseEvent mouseEvent) {
     }
+
 }

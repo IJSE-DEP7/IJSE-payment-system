@@ -3,6 +3,7 @@ package controller;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableView;
 import javafx.scene.layout.AnchorPane;
+import util.MaterialUI;
 
 public class DashBoardController {
 
@@ -12,4 +13,8 @@ public class DashBoardController {
     public Label lblIncomeCard;
     public Label lblIncomeOnline;
     public TableView tblDashBoard;
+
+    public void initialize(){
+        MaterialUI.drawBorder(pneBody);
+    }
 }
