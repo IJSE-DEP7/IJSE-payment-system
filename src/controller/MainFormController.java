@@ -1,6 +1,7 @@
 package controller;
 
 import javafx.event.ActionEvent;
+import javafx.event.Event;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.control.Button;
@@ -9,6 +10,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.text.Text;
+import javafx.stage.Stage;
 import util.MaterialUI;
 
 public class MainFormController {
@@ -23,17 +25,17 @@ public class MainFormController {
     public Button btnManageUsers;
     public Button btnManageExpenses;
     public Button btnExit;
-    public ImageView lblMenu;
-    public ImageView lblMinimize;
-    public ImageView lblClose;
+    public ImageView imgMenu;
     public Text txtUserNameLetter;
     public AnchorPane pneStage;
-
-
+    public AnchorPane window;
+    public ImageView imgMinimize;
+    public ImageView imgClose;
 
 
     public void initialize(){
         MaterialUI.drawBorder(pneSideBar);
+        initWindow();
     }
     public void nav(String url,String title){
         try{
@@ -82,6 +84,7 @@ public class MainFormController {
     }
 
     public void btnExit_OnAction(ActionEvent actionEvent) {
+
     }
 
     public void lblMenu_OnMouseClicked(MouseEvent mouseEvent) {
@@ -98,5 +101,9 @@ public class MainFormController {
 
     private void navigate(String url, String title){
         nav(url,title);
+    }
+
+    private void initWindow(){
+        imgClose.setOnMouseClicked(event -> ((Stage) (imgClose.getScene().getWindow())).close());
     }
 }

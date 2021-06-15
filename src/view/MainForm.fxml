@@ -9,10 +9,20 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="470.0" prefWidth="700.0" stylesheets="@css/MainForm.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.MainFormController">
+<AnchorPane fx:id="window" prefHeight="470.0" prefWidth="700.0" stylesheets="@css/MainForm.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.MainFormController">
     <children>
     <AnchorPane>
         <children>
+            <ImageView fx:id="imgMinimize" fitHeight="30.0" fitWidth="30.0" layoutX="626.0" layoutY="16.0" onMouseClicked="#lblMinimize_OnMouseClicked" pickOnBounds="true" preserveRatio="true">
+                <image>
+                    <Image url="@../assests/Advertisement%20Page.png" />
+                </image>
+            </ImageView>
+            <ImageView fx:id="imgClose" fitHeight="30.0" fitWidth="30.0" layoutX="656.0" layoutY="16.0" onMouseClicked="#lblClose_OnMouseClicked" pickOnBounds="true" preserveRatio="true">
+                <image>
+                    <Image url="@../assests/Multiply.png" />
+                </image>
+            </ImageView>
             <Label fx:id="lblTitle" layoutX="235.0" layoutY="16.0" text="Label">
                 <font>
                     <Font name="Ubuntu Bold" size="24.0" />
@@ -20,19 +30,9 @@
             </Label>
             <Label opacity="0.58" prefHeight="65.0" prefWidth="700.0" style="-fx-background-color: Black;" />
             <Circle fill="DODGERBLUE" layoutX="528.0" layoutY="31.0" radius="24.0" stroke="#2c2828" strokeType="INSIDE" style="-fx-fill: blue;" />
-            <ImageView fx:id="lblMenu" fitHeight="30.0" fitWidth="30.0" layoutX="571.0" layoutY="16.0" onMouseClicked="#lblMenu_OnMouseClicked" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="imgMenu" fitHeight="30.0" fitWidth="30.0" layoutX="571.0" layoutY="16.0" onMouseClicked="#lblMenu_OnMouseClicked" pickOnBounds="true" preserveRatio="true">
                 <image>
                     <Image url="@../assests/Menu.png" />
-                </image>
-            </ImageView>
-            <ImageView fx:id="lblMinimize" fitHeight="30.0" fitWidth="30.0" layoutX="626.0" layoutY="16.0" onMouseClicked="#lblMinimize_OnMouseClicked" pickOnBounds="true" preserveRatio="true">
-                <image>
-                    <Image url="@../assests/minimize.png" />
-                </image>
-            </ImageView>
-            <ImageView fx:id="lblClose" fitHeight="30.0" fitWidth="30.0" layoutX="656.0" layoutY="16.0" onMouseClicked="#lblClose_OnMouseClicked" pickOnBounds="true" preserveRatio="true">
-                <image>
-                    <Image url="@../assests/close.png" />
                 </image>
             </ImageView>
             <Text fx:id="txtUserNameLetter" fill="WHITE" layoutX="518.0" layoutY="40.0" onMouseClicked="#txtUserNameLetter_OnMouseClicked" strokeType="OUTSIDE" strokeWidth="0.0" text="B">
@@ -59,10 +59,8 @@
             <Button fx:id="btnManageExpenses" layoutY="352.0" mnemonicParsing="false" onAction="#btnManageExpenses_OnAction" opacity="0.58" prefHeight="42.0" prefWidth="188.0" style="-fx-background-color: black;" text="MANAGE EXPENSES" textFill="WHITE" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="316.0" />
             <Button fx:id="btnExit" layoutY="395.0" mnemonicParsing="false" onAction="#btnExit_OnAction" opacity="0.58" prefHeight="42.0" prefWidth="188.0" style="-fx-background-color: black;" text="EXIT" textFill="WHITE" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="361.0" />
         </children>
-    </AnchorPane>
-      <AnchorPane fx:id="pneStage" layoutX="198.0" layoutY="65.0" prefHeight="405.0" prefWidth="500.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="200.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="65.0">
+    </AnchorPane><AnchorPane fx:id="pneStage" layoutX="198.0" layoutY="65.0" prefHeight="405.0" prefWidth="500.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="200.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="65.0">
           <children>
-
           </children>
       </AnchorPane>
     </children>
