@@ -4,6 +4,7 @@ import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
@@ -27,6 +28,8 @@ public class CourseRegistrationController {
     public Button btnNext;
     public ImageView chk;
     public AnchorPane name;
+    public Label lblDate;
+    public Label lbltime;
     //private ImageView ImageView;
 
 
@@ -35,10 +38,7 @@ public class CourseRegistrationController {
         MaterialUI.paintTextFields(txtName,txtPlacementExamMarks,txtAddress,txtCommencementDate,txtDateOfBirth,txtEmail,txtPhoto);
         MaterialUI.checkBox(txtName,txtPlacementExamMarks,txtAddress,txtCommencementDate,txtDateOfBirth,txtEmail);
         MaterialUI.drawBorder(pneBody);
-
-
-        //System.out.println(name.getChildrenUnmodifiable().get(1));
-
+        lblDate.setText(DateAndTime.DateToday());
     }
 
 

@@ -44,7 +44,7 @@
                         <ComboBox fx:id="cmbQualification" accessibleText="Highest Qualification" layoutY="26.0" opacity="0.44" prefHeight="25.0" prefWidth="140.0" promptText="Select Student Highest Qualification" style="-fx-background-color: white;" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="15.0" />
                     </children>
                 </AnchorPane>
-                <AnchorPane fx:id="name" layoutX="15.0" layoutY="116.0" prefHeight="45.0" prefWidth="280.0">
+                <AnchorPane  layoutX="15.0" layoutY="116.0" prefHeight="45.0" prefWidth="280.0">
                     <children>
                         <TextField fx:id="txtName" accessibleText="Student Name" layoutY="10.0" promptText="Enter Student Name " style="-fx-background-color: white;" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="35.0" AnchorPane.topAnchor="15.0" />
                         <ImageView fx:id="chk" fitHeight="30.0" fitWidth="30.0" layoutX="254.0" layoutY="8.0" pickOnBounds="true" preserveRatio="true" visible="false" AnchorPane.bottomAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="11.0">
