@@ -6,6 +6,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
@@ -104,6 +105,12 @@ public class MainFormController {
     }
 
     private void initWindow(){
-        imgClose.setOnMouseClicked(event -> ((Stage) (imgClose.getScene().getWindow())).close());
+        imgClose.setOnMouseExited(event -> imgClose.setImage(new Image("/assests/close.png")));
+        imgClose.setOnMouseEntered(event -> imgClose.setImage(new Image("/assests/close-hover.png")));
+        imgClose.setOnMouseClicked(event -> ((Stage)(imgClose.getScene().getWindow())).close());
+
+        imgMinimize.setOnMouseExited(event -> imgMinimize.setImage(new Image("/assests/minimize.png")));
+        imgMinimize.setOnMouseEntered(event -> imgMinimize.setImage(new Image("/assests/minimize-hover.png")));
+
     }
 }

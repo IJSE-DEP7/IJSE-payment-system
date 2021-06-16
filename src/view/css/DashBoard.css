@@ -4,3 +4,7 @@
     -fx-font-family: "Ubuntu";
     -fx-font-size: 14px;
 }
+#tblDashBoard .table-column .label .text{
+    -fx-text-alignment: center;
+
+}

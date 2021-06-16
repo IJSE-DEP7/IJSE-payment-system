@@ -58,12 +58,12 @@ public class UserLoginController {
         newStage.show();
     }
     private void initWindow(){
-        icnClose.setOnMouseExited(event -> icnClose.setImage(new Image("/assests/Multiply.png")));
-        icnClose.setOnMouseEntered(event -> icnClose.setImage(new Image("/assests/close.png")));
+        icnClose.setOnMouseExited(event -> icnClose.setImage(new Image("/assests/close.png")));
+        icnClose.setOnMouseEntered(event -> icnClose.setImage(new Image("/assests/close-hover.png")));
         icnClose.setOnMouseClicked(event -> ((Stage)(icnClose.getScene().getWindow())).close());
 
-        icnMinimize.setOnMouseExited(event -> icnMinimize.setImage(new Image("/assests/minimize-hove.png")));
-        icnMinimize.setOnMouseEntered(event -> icnMinimize.setImage(new Image("/assests/minimize.png")));
+        icnMinimize.setOnMouseExited(event -> icnMinimize.setImage(new Image("/assests/minimize.png")));
+        icnMinimize.setOnMouseEntered(event -> icnMinimize.setImage(new Image("/assests/minimize-hover.png")));
 
     }
 }

@@ -57,9 +57,9 @@
             </Label>
             <TableView fx:id="tblDashBoard" layoutX="20.0" layoutY="80.0" prefHeight="313.0" prefWidth="461.0" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="80.0">
               <columns>
-                <TableColumn  prefWidth="152.0" text="Course" />
-                <TableColumn prefWidth="102.0" text="New Registrations" />
-                  <TableColumn prefWidth="99.0" text="Number Of Payments" />
+                <TableColumn prefWidth="152.0" text="Course" />
+                <TableColumn prefWidth="102.0" text="New &#10;Registrations" />
+                  <TableColumn prefWidth="99.0" text="Number Of &#10;Payments" />
                   <TableColumn prefWidth="106.0" text="Total Income" />
               </columns>
             </TableView>
