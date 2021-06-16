@@ -1,7 +1,7 @@
 package controller;
 
+import javafx.animation.FadeTransition;
 import javafx.event.ActionEvent;
-import javafx.event.Event;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.control.Button;
@@ -12,6 +12,7 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
+import javafx.util.Duration;
 import util.MaterialUI;
 
 public class MainFormController {
@@ -42,6 +43,12 @@ public class MainFormController {
         try{
             Parent root = FXMLLoader.load(this.getClass().getResource(url));
             pneStage.getChildren().clear();
+
+            FadeTransition ft = new FadeTransition(Duration.millis(500),window);
+            ft.setFromValue(0);
+            ft.setToValue(1);
+            ft.play();
+
             pneStage.getChildren().add(root);
             lblTitle.setText(title);
         }catch(Exception e){
@@ -73,7 +80,7 @@ public class MainFormController {
     }
 
     public void btnManageStudents_OnAction(ActionEvent actionEvent) {
-        navigate("/view/ManageStudents.fxml","Manage Students");
+        navigate("/view/ManageCourses.fxml","Manage Students");
     }
 
     public void btnManageUsers_OnAction(ActionEvent actionEvent) {

@@ -70,7 +70,7 @@ public class MaterialUI {
         ctx.strokeRect(1,3,pne.getPrefWidth()-2, pne.getPrefHeight()-4);
     }
 
-    public static void checkBox(TextField... textFields){
+    public static void addCheckBox(TextField... textFields){
         for(TextField txt : textFields) {
             txt.textProperty().addListener((observable, oldValue, newValue) -> {
                 if (newValue.length() > 0) {

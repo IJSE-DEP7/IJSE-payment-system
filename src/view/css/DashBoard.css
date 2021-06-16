@@ -6,5 +6,16 @@
 }
 #tblDashBoard .table-column .label .text{
     -fx-text-alignment: center;
-
+}
+#tblDashBoard{
+    -fx-background-color: rgba(0,0,0,0.1);
+}
+#tblDashBoard .table-row-cell:filled:hover{
+    -fx-background-color: rgba(0,0,0,0.15);
+}
+#tblDashBoard .table-row-cell:filled:selected{
+    -fx-background-color: rgba(0,0,0,0.2);
+}
+#tblDashBoard .cell{
+    -fx-cell-size: 58px;
 }

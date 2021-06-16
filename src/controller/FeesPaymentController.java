@@ -30,7 +30,7 @@ public class FeesPaymentController {
     public void initialize(){
         MaterialUI.paintComboBox(cmbCourse,cmbPaymentMethod);
         MaterialUI.paintTextFields(txtBatchNo,txtNextPayment,txtDescription,txtRecieptAmount,txtRecievedAmount,txtCommencementDate,txtSearchStudent,txtStudentEmail,txtStudentName);
-        MaterialUI.checkBox(txtBatchNo,txtNextPayment,txtDescription,txtRecieptAmount,txtRecievedAmount,txtCommencementDate,txtSearchStudent,txtStudentEmail,txtStudentName);
+        MaterialUI.addCheckBox(txtBatchNo,txtNextPayment,txtDescription,txtRecieptAmount,txtRecievedAmount,txtCommencementDate,txtSearchStudent,txtStudentEmail,txtStudentName);
         MaterialUI.drawBorder(pneBody);
         lblDate.setText(DateAndTime.DateToday());
     }

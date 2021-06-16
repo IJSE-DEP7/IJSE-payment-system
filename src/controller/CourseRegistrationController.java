@@ -42,7 +42,7 @@ public class CourseRegistrationController {
     private void initWindow(){
         MaterialUI.paintComboBox(cmbCourse,cmbQualification);
         MaterialUI.paintTextFields(txtName,txtPlacementExamMarks,txtAddress,txtCommencementDate,txtDateOfBirth,txtEmail,txtPhoto);
-        MaterialUI.checkBox(txtName,txtPlacementExamMarks,txtAddress,txtCommencementDate,txtDateOfBirth,txtEmail);
+        MaterialUI.addCheckBox(txtName,txtPlacementExamMarks,txtAddress,txtCommencementDate,txtDateOfBirth,txtEmail);
         MaterialUI.drawBorder(pneBody);
         lblDate.setText(DateAndTime.DateToday());
         checkBoxControl(chkPartTime,chkFullTime);
@@ -59,16 +59,14 @@ public class CourseRegistrationController {
     }
 
     public void btnClearAll_OnAction(ActionEvent actionEvent) {
+
     }
 
     public void btnNext_OnAction(ActionEvent actionEvent) {
+        MainFormController ctrl = (MainFormController) pneBody.getScene().getUserData();
+        ctrl.nav("/view/FeesPayment.fxml","Fees Payment");
     }
 
-    public void chbFullTime_OnMouseClicked(MouseEvent mouseEvent) {
-    }
-
-    public void chbPartTime_OnMouseClicked(MouseEvent mouseEvent) {
-    }
     public void lblAttachPhoto_OnMouseClicked(MouseEvent mouseEvent) {
     }
 
