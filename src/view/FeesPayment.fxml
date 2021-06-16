@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="405.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.FeesPaymentController">
+<AnchorPane prefHeight="405.0" prefWidth="500.0" stylesheets="@css/FeesPayment.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.FeesPaymentController">
     <children>
         <AnchorPane fx:id="pneBody" accessibleText="Course Name" layoutX="233.0" layoutY="74.0" prefHeight="405.0" prefWidth="500.0" style="-fx-background-color: white;" stylesheets="@css/CourseRegistration.css" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0">
             <children>
@@ -104,8 +104,8 @@
                         <Font name="Ubuntu Bold" size="14.0" />
                     </font>
                 </Label>
-                <Button fx:id="btnClearAll" layoutX="251.0" layoutY="357.0" mnemonicParsing="false" onAction="#btnClearAll_OnAction" prefHeight="36.0" prefWidth="120.0" style="-fx-background-color: Red;" text="Clear All" textFill="WHITE" AnchorPane.rightAnchor="120.0" />
-                <Button fx:id="btnNext" layoutX="395.0" layoutY="357.0" mnemonicParsing="false" onAction="#btnSubmit_OnAction" prefHeight="36.0" prefWidth="90.0" style="-fx-background-color: Blue;" text="Submit" textFill="WHITE" AnchorPane.rightAnchor="15.0" />
+                <Button fx:id="btnClearAll" layoutX="251.0" layoutY="357.0" mnemonicParsing="false" onAction="#btnClearAll_OnAction" prefHeight="36.0" prefWidth="120.0" style="-fx-background-color: Red;" styleClass="btn-pay" text="Clear All" textFill="WHITE" AnchorPane.rightAnchor="120.0" />
+                <Button fx:id="btnNext" layoutX="395.0" layoutY="357.0" mnemonicParsing="false" onAction="#btnSubmit_OnAction" prefHeight="36.0" prefWidth="90.0" style="-fx-background-color: Blue;" styleClass="btn-pay" text="Submit" textFill="WHITE" AnchorPane.rightAnchor="15.0" />
                 <CheckBox layoutX="104.0" layoutY="366.0" mnemonicParsing="false" />
                 <CheckBox layoutX="238.0" layoutY="366.0" mnemonicParsing="false" />
             <AnchorPane layoutX="15.0" layoutY="288.0" prefHeight="45.0" prefWidth="175.0" AnchorPane.leftAnchor="15.0" AnchorPane.topAnchor="285.0">
