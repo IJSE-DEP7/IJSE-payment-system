@@ -80,7 +80,7 @@ public class MainFormController {
     }
 
     public void btnManageStudents_OnAction(ActionEvent actionEvent) {
-        navigate("/view/ManageCourses.fxml","Manage Students");
+        navigate("/view/ManageCourses.fxml","Manage Courses");
     }
 
     public void btnManageUsers_OnAction(ActionEvent actionEvent) {

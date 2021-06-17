@@ -2,74 +2,35 @@
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.TextField?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
-<?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="405.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ManageCoursesController">
+<AnchorPane prefHeight="405.0" prefWidth="500.0" stylesheets="@css/ManageCourse.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ManageCoursesController">
     <children>
-        <AnchorPane fx:id="pneBody" accessibleText="Course Name" layoutX="233.0" layoutY="74.0" prefHeight="405.0" prefWidth="500.0" style="-fx-background-color: white;" stylesheets="@css/CourseRegistration.css" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <AnchorPane fx:id="pneBody" accessibleText="Course Name" layoutX="233.0" layoutY="74.0" prefHeight="405.0" prefWidth="500.0" style="-fx-background-color: white;" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0">
             <children>
-                <Label fx:id="lblDate" layoutX="242.0" layoutY="14.0" text="05 - June  - 2021" AnchorPane.leftAnchor="240.0" AnchorPane.topAnchor="15.0">
+                <Label fx:id="lblDateManageCourse" layoutX="242.0" layoutY="14.0" text="05 - June  - 2021" AnchorPane.leftAnchor="240.0" AnchorPane.topAnchor="15.0">
                     <font>
                         <Font name="Ubuntu Bold" size="13.0" />
                     </font>
                 </Label>
-                <Label fx:id="lbltime" layoutX="422.0" layoutY="15.0" text="15 : 55 : 50" AnchorPane.topAnchor="15.0">
+                <Label fx:id="lbltimeManageCourse" layoutX="422.0" layoutY="15.0" text="15 : 55 : 50" AnchorPane.leftAnchor="410.0" AnchorPane.topAnchor="15.0">
                     <font>
                         <Font name="Ubuntu Bold" size="13.0" />
                     </font>
                 </Label>
-                <AnchorPane layoutX="15.0" layoutY="116.0" prefHeight="45.0" prefWidth="470.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="110.0">
-                    <children>
-                        <TextField fx:id="txtCourseName" accessibleText="Course" layoutY="10.0" promptText="Enter Course Name " style="-fx-background-color: white;" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="35.0" AnchorPane.topAnchor="15.0" />
-                        <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="254.0" layoutY="8.0" pickOnBounds="true" preserveRatio="true" visible="false" AnchorPane.bottomAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="11.0">
-                            <image>
-                                <Image url="@../assests/1.%20Enabled.png" />
-                            </image>
-                        </ImageView>
-                    </children>
-                </AnchorPane>
-                <Button fx:id="btnEnter" layoutX="205.0" layoutY="353.0" mnemonicParsing="false" onAction="#btnEnter_OnAction" prefHeight="36.0" prefWidth="90.0" style="-fx-background-color: Blue;" styleClass="btn-reg" text="Enter" textFill="WHITE" AnchorPane.rightAnchor="205.0" AnchorPane.topAnchor="360.0" />
-            <Text layoutX="179.0" layoutY="97.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Add New Course" AnchorPane.leftAnchor="179.15" AnchorPane.rightAnchor="179.15" AnchorPane.topAnchor="77.0">
-               <font>
-                  <Font name="Ubuntu Bold" size="18.0" />
-               </font>
-            </Text>
-            <AnchorPane layoutX="22.0" layoutY="180.0" prefHeight="45.0" prefWidth="470.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="175.0">
-               <children>
-                  <TextField fx:id="txtCourseFee" accessibleText="Course Fee" layoutY="10.0" promptText="Enter Course Fee" style="-fx-background-color: white;" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="35.0" AnchorPane.topAnchor="15.0" />
-                  <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="254.0" layoutY="8.0" pickOnBounds="true" preserveRatio="true" visible="false" AnchorPane.bottomAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="11.0">
-                     <image>
-                        <Image url="@../assests/1.%20Enabled.png" />
-                     </image>
-                  </ImageView>
-               </children>
-            </AnchorPane>
-            <AnchorPane layoutX="22.0" layoutY="243.0" prefHeight="45.0" prefWidth="470.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="244.0">
-               <children>
-                  <TextField fx:id="txtRegistrationFee" accessibleText="Registration Fee" layoutY="10.0" promptText="Enter Registration Fee" style="-fx-background-color: white;" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="35.0" AnchorPane.topAnchor="15.0" />
-                  <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="254.0" layoutY="8.0" pickOnBounds="true" preserveRatio="true" visible="false" AnchorPane.bottomAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="11.0">
-                     <image>
-                        <Image url="@../assests/1.%20Enabled.png" />
-                     </image>
-                  </ImageView>
-               </children>
-            </AnchorPane>
-            <AnchorPane layoutX="51.0" layoutY="298.0" prefHeight="45.0" prefWidth="470.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="307.0">
-               <children>
-                  <TextField fx:id="txtNoOfPayments" accessibleText="Number Of Installations" layoutY="10.0" promptText="Enter Number of Payments " style="-fx-background-color: white;" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="35.0" AnchorPane.topAnchor="15.0" />
-                  <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="254.0" layoutY="8.0" pickOnBounds="true" preserveRatio="true" visible="false" AnchorPane.bottomAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="11.0">
-                     <image>
-                        <Image url="@../assests/1.%20Enabled.png" />
-                     </image>
-                  </ImageView>
-               </children>
-            </AnchorPane>
-            <Button fx:id="btnBack" layoutX="29.0" layoutY="41.0" mnemonicParsing="false" onAction="#btnBack_OnAction" prefHeight="36.0" prefWidth="90.0" style="-fx-background-color: Blue;" styleClass="btn-reg" text="Back" textFill="WHITE" AnchorPane.leftAnchor="25.0" AnchorPane.topAnchor="40.0" />
+                <TableView fx:id="tblManageCourses" layoutX="20.0" layoutY="80.0" prefHeight="313.0" prefWidth="461.0" stylesheets="@css/ManageCourse.css" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="80.0">
+                    <columns>
+                        <TableColumn prefWidth="95.0" text="Course" />
+                        <TableColumn prefWidth="91.0" text="Course Fee&#10;" />
+                        <TableColumn prefWidth="96.0" text="Registration &#10;Fee" />
+                        <TableColumn minWidth="0.0" prefWidth="92.0" text="Number Of &#10;Installments" />
+                  <TableColumn prefWidth="85.0" />
+                    </columns>
+                </TableView>
+            <Button fx:id="btnAddNewCourse" layoutX="20.0" layoutY="34.0" mnemonicParsing="false" onAction="#btnAddNewCourse_OnAction" prefHeight="35.0" prefWidth="130.0" style="-fx-background-color: blue;" styleClass="btn-newCourse" stylesheets="@css/ManageCourse.css" text="+ New Course" textFill="#f9f8fc" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="34.0" />
             </children>
         </AnchorPane>
     </children>
