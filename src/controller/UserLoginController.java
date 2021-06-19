@@ -8,6 +8,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Text;
@@ -51,8 +52,8 @@ public class UserLoginController {
         MainFormController ctrl = fxmlLoader.getController();
         ctrl.nav("/view/DashBoard.fxml","Dash Board");
         loginScene.setUserData(ctrl);
-        newStage.initModality(Modality.WINDOW_MODAL);
-        newStage.initOwner(btnLogin.getScene().getWindow());
+//        newStage.initModality(Modality.WINDOW_MODAL);
+//        newStage.initOwner(btnLogin.getScene().getWindow());
         loginScene.setFill(Color.TRANSPARENT);
         newStage.initStyle(StageStyle.TRANSPARENT);
         newStage.show();
@@ -65,5 +66,18 @@ public class UserLoginController {
         icnMinimize.setOnMouseExited(event -> icnMinimize.setImage(new Image("/assests/minimize.png")));
         icnMinimize.setOnMouseEntered(event -> icnMinimize.setImage(new Image("/assests/minimize-hover.png")));
 
+    }
+
+    public void txtSignUp_OnMouseClicked(MouseEvent mouseEvent) throws IOException {
+        ((Stage)(icnClose.getScene().getWindow())).close();
+        Stage SignUpStage = new Stage();
+        FXMLLoader fxmlLoader= new FXMLLoader(this.getClass().getResource("/view/SignUpForm.fxml"));
+        Parent root = fxmlLoader.load();
+        Scene signUpScene = new Scene(root);
+        SignUpStage.setScene(signUpScene);
+
+        signUpScene.setFill(Color.TRANSPARENT);
+        SignUpStage.initStyle(StageStyle.TRANSPARENT);
+        SignUpStage.show();
     }
 }

@@ -62,7 +62,7 @@
             <Text fx:id="txtForgotPassword" fill="#720909" layoutX="352.0" layoutY="222.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Forgot Password?" wrappingWidth="122.00000137090683" />
             <Button fx:id="btnLogin" layoutX="120.0" layoutY="248.0" mnemonicParsing="false" onAction="#btnLogin_OnAction" opacity="0.9" prefHeight="50.0" prefWidth="260.0" style="-fx-background-color: black;" styleClass="btn-login" text="Login" textFill="WHITE" AnchorPane.topAnchor="250.0" />
             <Text layoutX="120.0" layoutY="313.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Not a registered user yet?" AnchorPane.topAnchor="305.0" />
-            <Text fx:id="txtSignUp" fill="#1b62dd" layoutX="297.0" layoutY="313.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Sign Up Now" AnchorPane.topAnchor="305.0" />
+            <Text fx:id="txtSignUp" fill="#1b62dd" layoutX="297.0" layoutY="313.0" onMouseClicked="#txtSignUp_OnMouseClicked" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text-signup" text="Sign Up Now" AnchorPane.topAnchor="305.0" />
          </children>
       </AnchorPane>
       <ImageView fx:id="icnMinimize" fitHeight="30.0" fitWidth="30.0" layoutX="418.0" layoutY="15.0" pickOnBounds="true" preserveRatio="true">

@@ -1,14 +1,93 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="controller.TransactionDetailsController"
-            prefHeight="400.0" prefWidth="600.0">
-
+<AnchorPane prefHeight="405.0" prefWidth="500.0" stylesheets="@css/DashBoard.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.TransactionDetailsController">
+    <children>
+        <AnchorPane fx:id="pneBody" accessibleText="Course Name" layoutX="233.0" layoutY="74.0" prefHeight="405.0" prefWidth="500.0" style="-fx-background-color: white;" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0">
+            <children>
+                <Label layoutX="20.0" layoutY="93.0" text="Cash :" textFill="#e10f0f" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="90.0">
+                    <font>
+                        <Font name="Ubuntu Bold" size="18.0" />
+                    </font>
+                </Label>
+                <Label fx:id="lblIncomeCash" layoutX="70.0" layoutY="93.0" text="225, 000" textFill="#e10f0f" AnchorPane.leftAnchor="70.0" AnchorPane.topAnchor="90.0">
+                    <font>
+                        <Font name="Ubuntu Bold" size="18.0" />
+                    </font>
+                </Label>
+                <Label fx:id="lblDate" layoutX="242.0" layoutY="14.0" text="05 - June  - 2021" AnchorPane.leftAnchor="240.0" AnchorPane.topAnchor="15.0">
+                    <font>
+                        <Font name="Ubuntu Bold" size="13.0" />
+                    </font>
+                </Label>
+                <Label fx:id="lbltime" layoutX="422.0" layoutY="15.0" text="15 : 55 : 50" AnchorPane.leftAnchor="410.0" AnchorPane.topAnchor="15.0">
+                    <font>
+                        <Font name="Ubuntu Bold" size="13.0" />
+                    </font>
+                </Label>
+                <Label layoutX="166.0" layoutY="93.0" text="Card :" textFill="#e10f0f" AnchorPane.leftAnchor="166.0" AnchorPane.topAnchor="90.0">
+                    <font>
+                        <Font name="Ubuntu Bold" size="18.0" />
+                    </font>
+                </Label>
+                <Label fx:id="lblIncomeCard" layoutX="215.0" layoutY="93.0" text="225, 000" textFill="#e10f0f" AnchorPane.topAnchor="90.0">
+                    <font>
+                        <Font name="Ubuntu Bold" size="18.0" />
+                    </font>
+                </Label>
+                <Label layoutX="339.0" layoutY="93.0" text="Online :" textFill="#e10f0f" AnchorPane.leftAnchor="339.0" AnchorPane.topAnchor="90.0">
+                    <font>
+                        <Font name="Ubuntu Bold" size="18.0" />
+                    </font>
+                </Label>
+                <Label fx:id="lblIncomeOnline" layoutX="407.0" layoutY="93.0" text="225, 000" textFill="#e10f0f" AnchorPane.leftAnchor="407.0" AnchorPane.topAnchor="90.0">
+                    <font>
+                        <Font name="Ubuntu Bold" size="18.0" />
+                    </font>
+                </Label>
+                <TableView fx:id="tblDashBoard" layoutX="20.0" layoutY="80.0" prefHeight="313.0" prefWidth="461.0" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="120.0">
+                    <columns>
+                        <TableColumn prefWidth="152.0" text="Course" />
+                        <TableColumn prefWidth="102.0" text="Amount Of &#10;Payment" />
+                        <TableColumn prefWidth="99.0" text="User&#10;" />
+                        <TableColumn prefWidth="106.0" text="Payment &#10;Method" />
+                    </columns>
+                </TableView>
+                <AnchorPane layoutX="20.0" layoutY="53.0" prefHeight="45.0" prefWidth="160.0" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="35.0">
+                    <children>
+                        <TextField fx:id="txtstartDate" accessibleText="From" layoutX="8.0" layoutY="3.0" promptText="YYYY - MM - DD" style="-fx-background-color: white;" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="35.0" AnchorPane.topAnchor="15.0" />
+                  <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="133.0" layoutY="17.0" pickOnBounds="true" preserveRatio="true" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="5.0">
+                     <image>
+                        <Image url="@../assests/1.%20Enabled.png" />
+                     </image>
+                  </ImageView>
+                    </children>
+                </AnchorPane>
+                <AnchorPane accessibleText="To" layoutX="202.0" layoutY="35.0" prefHeight="45.0" prefWidth="160.0" style="-fx-background-color: white;" AnchorPane.leftAnchor="180.0" AnchorPane.topAnchor="35.0">
+                    <children>
+                        <TextField fx:id="txtLastDay" accessibleText="To" layoutY="3.0" promptText="YYYY - MM - DD" style="-fx-background-color: white;" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="35.0" AnchorPane.topAnchor="15.0" />
+                  <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="133.0" layoutY="17.0" pickOnBounds="true" preserveRatio="true" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="5.0">
+                     <image>
+                        <Image url="@../assests/1.%20Enabled.png" />
+                     </image>
+                  </ImageView>
+                    </children>
+                </AnchorPane>
+                <Button fx:id="btnSearch" layoutX="359.0" layoutY="55.0" mnemonicParsing="false" onAction="#btnSearch_OnAction" style="-fx-background-color: blue;" text="Search" textFill="WHITE" AnchorPane.leftAnchor="360.0" AnchorPane.topAnchor="50.0">
+                    <font>
+                        <Font name="Ubuntu Bold" size="15.0" />
+                    </font>
+                </Button>
+            </children>
+        </AnchorPane>
+    </children>
 </AnchorPane>
