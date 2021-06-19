@@ -3,6 +3,8 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
@@ -60,6 +62,11 @@
               </columns>
             </TableView>
             <Text layoutX="20.0" layoutY="43.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Today Transactions" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="30.0" />
+            <ImageView fx:id="icnNotifications" fitHeight="30.0" fitWidth="30.0" layoutX="176.0" layoutY="8.0" onMouseClicked="#lblNotifications_OnMouseClicked" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="175.0" AnchorPane.topAnchor="5.0">
+               <image>
+                  <Image url="@../assests/Notification.png" />
+               </image>
+            </ImageView>
             </children>
         </AnchorPane>
     </children>

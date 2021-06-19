@@ -7,5 +7,5 @@
 }
 .text-signup:hover{
     -fx-background-color:rgba(0,0,0,0.9) !important;
-    -fx-font-size: 15px;
+    -fx-font-size: 14px;
 }
