@@ -92,7 +92,7 @@ public class MainFormController {
     }
 
     public void btnExit_OnAction(ActionEvent actionEvent) {
-
+        ((Stage)pneStage.getScene().getWindow()).close();
     }
 
     public void lblMenu_OnMouseClicked(MouseEvent mouseEvent) {

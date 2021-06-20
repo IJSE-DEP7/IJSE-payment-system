@@ -20,17 +20,17 @@ public class PaymentAlertsController {
     public Label lblDate;
     public Label lbltime;
     public Button btnBack;
-    public TableView<PaymentAlertsTM> tblUpComingPayments;
+    public TableView<PaymentAlertsTM>  tblPaymentAlerts;
 
     public void initialize(){
         MaterialUI.drawBorder(pneBody);
         lblDate.setText(DateAndTime.DateToday());
-        tblUpComingPayments.getColumns().get(0).setCellValueFactory(new PropertyValueFactory<>("courseName"));
-        tblUpComingPayments.getColumns().get(1).setCellValueFactory(new PropertyValueFactory<>("studentName"));
-        tblUpComingPayments.getColumns().get(2).setCellValueFactory(new PropertyValueFactory<>("contactNo"));
-        tblUpComingPayments.getColumns().get(3).setCellValueFactory(new PropertyValueFactory<>("dueDate"));
-        tblUpComingPayments.getColumns().get(4).setCellValueFactory(new PropertyValueFactory<>("amount"));
-        TableColumn<PaymentAlertsTM, VBox> lastcol = (TableColumn<PaymentAlertsTM, VBox>) tblUpComingPayments.getColumns().get(5);
+        tblPaymentAlerts.getColumns().get(0).setCellValueFactory(new PropertyValueFactory<>("courseName"));
+        tblPaymentAlerts.getColumns().get(1).setCellValueFactory(new PropertyValueFactory<>("studentName"));
+        tblPaymentAlerts.getColumns().get(2).setCellValueFactory(new PropertyValueFactory<>("contactNo"));
+        tblPaymentAlerts.getColumns().get(3).setCellValueFactory(new PropertyValueFactory<>("dueDate"));
+        tblPaymentAlerts.getColumns().get(4).setCellValueFactory(new PropertyValueFactory<>("amount"));
+        TableColumn<PaymentAlertsTM, VBox> lastcol = (TableColumn<PaymentAlertsTM, VBox>) tblPaymentAlerts.getColumns().get(5);
 
         lastcol.setCellValueFactory(param -> {
             Button btnSMS = new Button();
@@ -38,12 +38,17 @@ public class PaymentAlertsController {
             Button btnTrash = new Button();
 
             btnSMS.getStyleClass().add("sms-button");
+            btnSMS.setText("SMS");
             btnEmail.getStyleClass().add("email-button");
+            btnEmail.setText("Email");
             btnTrash.getStyleClass().add("trash-button");
+            btnTrash.setText("Remove");
+
+
 
             return new ReadOnlyObjectWrapper<>(new VBox(5, btnSMS,btnEmail, btnTrash));
         });
-        tblUpComingPayments.getItems().add(new PaymentAlertsTM());
+        tblPaymentAlerts.getItems().add(new PaymentAlertsTM());
 
 
     }

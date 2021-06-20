@@ -31,10 +31,10 @@ public class DashBoardController {
         tblDashBoard.getItems().add(new DashBoardTM());
 
         icnNotifications.setOnMouseEntered(event -> {
-            icnNotifications.setImage(new Image("assets/Notification-hover.png"));
+            icnNotifications.setImage(new Image("/assests/Notification-hover.png"));
         });
         icnNotifications.setOnMouseExited(event -> {
-            icnNotifications.setImage(new Image("assets/Notification.png"));
+            icnNotifications.setImage(new Image("/assests/Notification.png"));
         });
     }
 

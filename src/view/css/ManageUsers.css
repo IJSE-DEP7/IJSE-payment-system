@@ -1,0 +1,39 @@
+#tblManageUsers .column-header{
+    -fx-background-color: rgba(0,0,0,0.4);
+    -fx-size: 60px;
+    -fx-font-family: "Ubuntu";
+    -fx-font-size: 14px;
+}
+#tblManageUsers .table-column .label .text{
+    -fx-text-alignment: center;
+}
+#tblManageUsers{
+    -fx-background-color: rgba(0,0,0,0.1);
+}
+#tblManageUsers .table-row-cell:filled:hover{
+    -fx-background-color: rgba(0,0,0,0.15);
+}
+#tblManageUsers .table-row-cell:filled:selected{
+    -fx-background-color: rgba(0,0,0,0.2);
+}
+#tblManageUsers .cell{
+    -fx-cell-size: 58px;
+}
+
+.trash-button{
+    -fx-cursor: hand;
+    -fx-pref-width: 30px;
+    -fx-pref-height: 30px;
+    -fx-background-color: #C31818;
+    -fx-background-image: url("/assests/trash.png");
+    -fx-border-color: #690A0A;
+}
+
+.edit-button{
+    -fx-cursor: hand;
+    -fx-pref-width: 30px;
+    -fx-pref-height: 30px;
+    -fx-background-color: #D9C405;
+    -fx-background-image: url("/assests/edit.png");
+    -fx-border-color: #615D07;
+}

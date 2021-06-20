@@ -35,6 +35,7 @@ public class ManageCoursesController {
 
         MaterialUI.drawBorder(pneBody);
         lblDateManageCourse.setText(DateAndTime.DateToday());
+
         tblManageCourses.getColumns().get(0).setCellValueFactory(new PropertyValueFactory<>("courseName"));
         tblManageCourses.getColumns().get(1).setCellValueFactory(new PropertyValueFactory<>("courseFee"));
         tblManageCourses.getColumns().get(2).setCellValueFactory(new PropertyValueFactory<>("regFee"));
@@ -51,6 +52,7 @@ public class ManageCoursesController {
 
             return new ReadOnlyObjectWrapper<>(new HBox(5, btnEdit, btnTrash));
         });
+
         tblManageCourses.getItems().add(new CourseTM());
 
     }

@@ -1,0 +1,48 @@
+#tblPaymentAlerts .column-header{
+    -fx-background-color: rgba(0,0,0,0.4);
+    -fx-size: 60px;
+    -fx-font-family: "Ubuntu";
+    -fx-font-size: 14px;
+}
+#tblPaymentAlerts .table-column .label .text{
+    -fx-text-alignment: center;
+}
+#tblPaymentAlerts{
+    -fx-background-color: rgba(0,0,0,0.1);
+}
+#tblPaymentAlerts .table-row-cell:filled:hover{
+    -fx-background-color: rgba(0,0,0,0.15);
+}
+#tblPaymentAlerts .table-row-cell:filled:selected{
+    -fx-background-color: rgba(0,0,0,0.2);
+}
+#tblPaymentAlerts .cell{
+    -fx-cell-size: 58px;
+}
+
+.sms-button{
+    -fx-cursor: hand;
+    -fx-pref-height: 18px;
+    -fx-pref-width: 70px;
+    -fx-font-size: 12px;
+    -fx-background-color: #21521d;
+    -fx-text-fill: white;
+}
+
+.email-button{
+    -fx-cursor: hand;
+    -fx-pref-height: 18px;
+    -fx-pref-width: 70px;
+    -fx-font-size: 12px;
+    -fx-background-color: #bd1eba;
+    -fx-text-fill: white;
+}
+
+.trash-button{
+    -fx-cursor: hand;
+    -fx-pref-height: 18px;
+    -fx-pref-width: 70px;
+    -fx-font-size: 12px;
+    -fx-background-color: #650718;
+    -fx-text-fill: white;
+}

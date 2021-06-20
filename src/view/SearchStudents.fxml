@@ -1,14 +1,49 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="controller.SearchStudentsController"
-            prefHeight="400.0" prefWidth="600.0">
-
+<AnchorPane prefHeight="405.0" prefWidth="500.0" stylesheets="@css/SearchStudents.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.SearchStudentsController">
+    <children>
+        <AnchorPane fx:id="pneBody" accessibleText="Course Name" layoutX="233.0" layoutY="74.0" prefHeight="405.0" prefWidth="500.0" style="-fx-background-color: white;" stylesheets="@css/PaymentAlerts.css" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0">
+            <children>
+                <Label fx:id="lblDate" layoutX="242.0" layoutY="14.0" text="05 - June  - 2021" AnchorPane.leftAnchor="240.0" AnchorPane.topAnchor="15.0">
+                    <font>
+                        <Font name="Ubuntu Bold" size="13.0" />
+                    </font>
+                </Label>
+                <Label fx:id="lbltime" layoutX="422.0" layoutY="15.0" text="15 : 55 : 50" AnchorPane.leftAnchor="410.0" AnchorPane.topAnchor="15.0">
+                    <font>
+                        <Font name="Ubuntu Bold" size="13.0" />
+                    </font>
+                </Label>
+                <TableView fx:id="tblSearchStudents" layoutX="20.0" layoutY="80.0" prefHeight="315.0" prefWidth="464.0" stylesheets="@css/SearchStudents.css" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="100.0">
+                    <columns>
+                        <TableColumn prefWidth="59.0" text="Name" />
+                        <TableColumn prefWidth="93.0" text="Address&#10;" />
+                        <TableColumn prefWidth="87.0" text="Email&#10;" />
+                        <TableColumn prefWidth="75.0" text="Contact&#10;Number&#10;" />
+                        <TableColumn prefWidth="73.0" text="Date Of&#10;Birth&#10;" />
+                        <TableColumn prefWidth="85.0" text="&#10;" />
+                    </columns>
+                </TableView>
+            <AnchorPane layoutX="20.0" layoutY="60.0" prefHeight="45.0" prefWidth="465.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="16.0" AnchorPane.topAnchor="40.0">
+               <children>
+                  <TextField fx:id="txtSearchStudent" accessibleText="Query" prefHeight="25.0" prefWidth="455.0" promptText="Search Student By NIC, Contact Number, Email, Student Id" style="-fx-background-color: white;" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="35.0" AnchorPane.topAnchor="15.0" />
+                  <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="429.0" layoutY="8.0" pickOnBounds="true" preserveRatio="true" visible="false" AnchorPane.bottomAnchor="5.0" AnchorPane.rightAnchor="5.0">
+                     <image>
+                        <Image url="@../assests/1.%20Enabled.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+            </children>
+        </AnchorPane>
+    </children>
 </AnchorPane>
