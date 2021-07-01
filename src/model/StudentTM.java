@@ -1,11 +1,24 @@
 package model;
 
+import java.time.LocalDate;
+
 public class StudentTM {
     private String name;
     private String address;
     private String email;
     private String contactNo;
-    private String DOB;
+    private LocalDate DOB;
+
+    public StudentTM() {
+    }
+
+    public StudentTM(String name, String address, String email, String contactNo, LocalDate DOB) {
+        this.name = name;
+        this.address = address;
+        this.email = email;
+        this.contactNo = contactNo;
+        this.DOB = DOB;
+    }
 
     public String getName() {
         return name;
@@ -39,11 +52,11 @@ public class StudentTM {
         this.contactNo = contactNo;
     }
 
-    public String getDOB() {
+    public LocalDate getDOB() {
         return DOB;
     }
 
-    public void setDOB(String DOB) {
+    public void setDOB(LocalDate DOB) {
         this.DOB = DOB;
     }
 

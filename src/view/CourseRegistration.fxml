@@ -74,9 +74,9 @@
                         </ImageView>
                     </children>
                 </AnchorPane>
-                <AnchorPane accessibleText="Commencement Date" layoutX="16.0" layoutY="304.0" prefHeight="45.0" prefWidth="175.0">
+                <AnchorPane accessibleText="Contact Number" layoutX="16.0" layoutY="304.0" prefHeight="45.0" prefWidth="175.0">
                     <children>
-                        <TextField fx:id="txtCommencementDate" accessibleText="Commencement Date" layoutY="10.0" promptText="YYYY - MM -DD" style="-fx-background-color: white;" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="35.0" AnchorPane.topAnchor="15.0" />
+                        <TextField fx:id="txtContactNo" accessibleText="Contact Number" layoutY="10.0" promptText="Enter Contact No" style="-fx-background-color: white;" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="35.0" AnchorPane.topAnchor="15.0" />
                         <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="140.0" layoutY="8.0" pickOnBounds="true" preserveRatio="true" visible="false" AnchorPane.bottomAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="11.0">
                             <image>
                                 <Image url="@../assests/1.%20Enabled.png" />
@@ -97,7 +97,7 @@
                 <AnchorPane layoutX="206.0" layoutY="246.0" prefHeight="45.0" prefWidth="280.0">
                     <children>
                         <TextField fx:id="txtEmail" accessibleText="Student Email Address" layoutY="10.0" promptText="Enter Student Email Address" style="-fx-background-color: white;" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="35.0" AnchorPane.topAnchor="15.0" />
-                        <ImageView fx:id="lblAttachPhoto" fitHeight="30.0" fitWidth="30.0" layoutX="248.0" layoutY="10.0" onMouseClicked="#lblAttachPhoto_OnMouseClicked" pickOnBounds="true" preserveRatio="true" visible="false" AnchorPane.bottomAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="11.0">
+                        <ImageView  fitHeight="30.0" fitWidth="30.0" layoutX="248.0" layoutY="10.0" onMouseClicked="#lblAttachPhoto_OnMouseClicked" pickOnBounds="true" preserveRatio="true" visible="false" AnchorPane.bottomAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="11.0">
                             <image>
                                 <Image url="@../assests/1.%20Enabled.png" />
                             </image>
@@ -106,7 +106,7 @@
                 </AnchorPane>
                 <AnchorPane layoutX="206.0" layoutY="304.0" prefHeight="45.0" prefWidth="280.0">
                     <children>
-                        <TextField fx:id="txtPhoto" accessibleText="Student NIC" layoutY="10.0" promptText="Enter Student NIC" style="-fx-background-color: white;" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="35.0" AnchorPane.topAnchor="15.0" />
+                        <TextField fx:id="txtNic" accessibleText="Student NIC" layoutY="10.0" promptText="Enter Student NIC" style="-fx-background-color: white;" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="35.0" AnchorPane.topAnchor="15.0" />
                         <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="246.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true" visible="false" AnchorPane.bottomAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="11.0">
                      <image>
                         <Image url="@../assests/1.%20Enabled.png" />

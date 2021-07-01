@@ -6,7 +6,9 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.HBox;
 import model.CourseTM;
+import model.Student;
 import model.StudentTM;
+import service.StudentService;
 import util.DateAndTime;
 import util.MaterialUI;
 
@@ -18,8 +20,11 @@ public class SearchStudentsController {
     public TextField txtSearchStudent;
 
     public void initialize(){
+
         initwindow();
+        loadAllStudents();
     }
+
 
     private void initwindow() {
         MaterialUI.drawBorder(pneBody);
@@ -45,7 +50,16 @@ public class SearchStudentsController {
             return new ReadOnlyObjectWrapper<>(new HBox(10, btnEdit, btnTrash));
         });
 
-
-        tblSearchStudents.getItems().add(new StudentTM());
     }
+
+    private void loadAllStudents() {
+
+        tblSearchStudents.getItems().clear();
+
+        for(Student student : StudentService.findAllStudents()){
+            tblSearchStudents.getItems().add(new StudentTM(student.getName(),student.getAddress(),student.getEmail(),student.getContactNo(),student.getDateOfBirth()));
+        }
+
+    }
+
 }
