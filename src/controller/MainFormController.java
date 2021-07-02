@@ -58,7 +58,7 @@ public class MainFormController {
 
     /*
             Methods of sidebar
-         */
+    */
     public void btnDashBoard_OnAction(ActionEvent actionEvent) {
         navigate("/view/DashBoard.fxml","Dash Board");
     }

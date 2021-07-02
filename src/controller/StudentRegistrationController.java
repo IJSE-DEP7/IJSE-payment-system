@@ -42,7 +42,7 @@ public class StudentRegistrationController {
     private void initWindow(){
         MaterialUI.paintComboBox(cmbCourse,cmbQualification);
         MaterialUI.paintTextFields(txtName,txtPlacementExamMarks,txtAddress,txtContactNo,txtDateOfBirth,txtEmail,txtNic);
-        MaterialUI.addCheckBox(txtName,txtPlacementExamMarks,txtAddress,txtContactNo,txtDateOfBirth,txtEmail);
+        MaterialUI.addCheckBox(txtName,txtPlacementExamMarks,txtAddress,txtContactNo,txtDateOfBirth,txtEmail,txtNic);
         MaterialUI.drawBorder(pneBody);
         lblDate.setText(DateAndTime.DateToday());
         checkBoxControl(chkPartTime,chkFullTime);
