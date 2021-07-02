@@ -2,7 +2,6 @@ package controller;
 
 import javafx.scene.control.Label;
 import javafx.scene.control.TableView;
-import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
@@ -40,6 +39,6 @@ public class DashBoardController {
 
     public void lblNotifications_OnMouseClicked(MouseEvent mouseEvent) {
          MainFormController ctrl = (MainFormController) pneBody.getScene().getUserData();
-         ctrl.nav("/view/PaymentAlerts.fxml","Dash Board");
+         ctrl.navigate("/view/PaymentAlerts.fxml","Dash Board");
     }
 }

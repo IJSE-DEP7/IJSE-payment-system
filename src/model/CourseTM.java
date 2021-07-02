@@ -4,6 +4,7 @@ import java.io.Serializable;
 
 public class CourseTM implements Serializable {
 
+    private String id;
     private String courseName;
     private String courseFee;
     private String regFee;
@@ -12,11 +13,20 @@ public class CourseTM implements Serializable {
     public CourseTM() {
     }
 
-    public CourseTM(String courseName, String courseFee, String regFee, String noOfInstallments) {
+    public CourseTM(String id,String courseName, String courseFee, String regFee, String noOfInstallments) {
+        this.id=id;
         this.courseName = courseName;
         this.courseFee = courseFee;
         this.regFee = regFee;
         this.noOfInstallments = noOfInstallments;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 
     public String getCourseName() {

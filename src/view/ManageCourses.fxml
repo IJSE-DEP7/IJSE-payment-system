@@ -21,13 +21,14 @@
                         <Font name="Ubuntu Bold" size="13.0" />
                     </font>
                 </Label>
-                <TableView fx:id="tblManageCourses" layoutX="20.0" layoutY="80.0" prefHeight="313.0" prefWidth="461.0" stylesheets="@css/ManageCourse.css" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="80.0">
+                <TableView fx:id="tblManageCourses" layoutX="20.0" layoutY="80.0" onKeyPressed="#tblManageCourses_OnAction" prefHeight="313.0" prefWidth="461.0" stylesheets="@css/ManageCourse.css" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="80.0">
                     <columns>
-                        <TableColumn prefWidth="95.0" text="Course" />
-                        <TableColumn prefWidth="91.0" text="Course Fee&#10;" />
-                        <TableColumn prefWidth="96.0" text="Registration &#10;Fee" />
-                        <TableColumn minWidth="0.0" prefWidth="92.0" text="Number Of &#10;Installments" />
-                  <TableColumn prefWidth="85.0" />
+                  <TableColumn prefWidth="72.0" text="Course Id" />
+                        <TableColumn prefWidth="73.0" text="Course" />
+                        <TableColumn prefWidth="89.0" text="Course Fee&#10;" />
+                        <TableColumn prefWidth="68.0" text="Reg-Fee" />
+                        <TableColumn minWidth="0.0" prefWidth="76.0" text="No Of &#10;Payments" />
+                  <TableColumn prefWidth="156.0" />
                     </columns>
                 </TableView>
             <Button fx:id="btnAddNewCourse" layoutX="20.0" layoutY="34.0" mnemonicParsing="false" onAction="#btnAddNewCourse_OnAction" prefHeight="35.0" prefWidth="130.0" style="-fx-background-color: blue;" styleClass="btn-newCourse" stylesheets="@css/ManageCourse.css" text="+ New Course" textFill="#f9f8fc" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="34.0" />

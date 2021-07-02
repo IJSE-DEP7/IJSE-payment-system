@@ -12,7 +12,6 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Text;
-import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 import util.DateAndTime;
@@ -50,7 +49,7 @@ public class UserLoginController {
         Scene loginScene = new Scene(root);
         newStage.setScene(loginScene);
         MainFormController ctrl = fxmlLoader.getController();
-        ctrl.nav("/view/DashBoard.fxml","Dash Board");
+        ctrl.navigate("/view/DashBoard.fxml","Dash Board");
         loginScene.setUserData(ctrl);
 //        newStage.initModality(Modality.WINDOW_MODAL);
 //        newStage.initOwner(btnLogin.getScene().getWindow());

@@ -39,9 +39,14 @@ public class MainFormController {
         MaterialUI.drawBorder(pneSideBar);
         initWindow();
     }
-    public void nav(String url,String title){
+    public void navigate(String url, String title){
+        navigate(url,title,null);
+    }
+
+    public void navigate(String url, String title,Object data){
         try{
             Parent root = FXMLLoader.load(this.getClass().getResource(url));
+            root.setUserData(data);
             pneStage.getChildren().clear();
 
             FadeTransition ft = new FadeTransition(Duration.millis(500),window);
@@ -105,10 +110,6 @@ public class MainFormController {
     }
 
     public void txtUserNameLetter_OnMouseClicked(MouseEvent mouseEvent) {
-    }
-
-    private void navigate(String url, String title){
-        nav(url,title);
     }
 
     private void initWindow(){

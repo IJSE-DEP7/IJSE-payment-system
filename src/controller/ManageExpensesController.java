@@ -10,7 +10,6 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.HBox;
 import model.ExpenseTM;
-import model.UserTM;
 import util.DateAndTime;
 import util.MaterialUI;
 
@@ -49,6 +48,6 @@ public class ManageExpensesController {
 
     public void btnAddNewExpense_OnAction(ActionEvent actionEvent) {
         MainFormController ctrl = (MainFormController) pneBody.getScene().getUserData();
-        ctrl.nav("/view/AddNewExpense.fxml","Manage Expenses");
+        ctrl.navigate("/view/AddNewExpense.fxml","Manage Expenses");
     }
 }

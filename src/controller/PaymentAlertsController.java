@@ -8,9 +8,7 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.AnchorPane;
-import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
-import javafx.stage.Window;
 import model.PaymentAlertsTM;
 import util.DateAndTime;
 import util.MaterialUI;
@@ -55,6 +53,6 @@ public class PaymentAlertsController {
 
     public void btnBack_OnAction(ActionEvent actionEvent) {
         MainFormController ctrl = (MainFormController) pneBody.getScene().getUserData();
-        ctrl.nav("/view/DashBoard.fxml","Dash Board");
+        ctrl.navigate("/view/DashBoard.fxml","Dash Board");
     }
 }

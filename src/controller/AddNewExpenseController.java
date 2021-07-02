@@ -32,7 +32,7 @@ public class AddNewExpenseController {
 
     public void btnBack_OnAction(ActionEvent actionEvent) {
         MainFormController ctrl = (MainFormController) pneBody.getScene().getUserData();
-        ctrl.nav("/view/ManageExpenses.fxml","Manage Expenses");
+        ctrl.navigate("/view/ManageExpenses.fxml","Manage Expenses");
     }
 
     public void btnEnter_OnAction(ActionEvent actionEvent) {

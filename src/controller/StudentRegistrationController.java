@@ -1,8 +1,6 @@
 package controller;
 
-import javafx.application.Platform;
 import javafx.event.ActionEvent;
-import javafx.event.Event;
 import javafx.scene.control.*;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
@@ -82,7 +80,7 @@ public class StudentRegistrationController {
             return;
         }
         MainFormController ctrl = (MainFormController) pneBody.getScene().getUserData();
-        ctrl.nav("/view/FeesPayment.fxml","Fees Payment");
+        ctrl.navigate("/view/FeesPayment.fxml","Fees Payment");
     }
 
     public void lblAttachPhoto_OnMouseClicked(MouseEvent mouseEvent) {
