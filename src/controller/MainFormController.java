@@ -79,7 +79,7 @@ public class MainFormController {
         navigate("/view/SearchStudents.fxml","Student Details");
     }
 
-    public void btnManageStudents_OnAction(ActionEvent actionEvent) {
+    public void btnManageCourses_OnAction(ActionEvent actionEvent) {
         navigate("/view/ManageCourses.fxml","Manage Courses");
     }
 

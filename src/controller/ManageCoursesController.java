@@ -8,7 +8,9 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Material;
+import model.Course;
 import model.CourseTM;
+import service.CourseService;
 import util.DateAndTime;
 import util.MaterialUI;
 
@@ -33,6 +35,11 @@ public class ManageCoursesController {
 //        MaterialUI.addCheckBox(txtCourseFee,txtCourseName,txtRegistrationFee,txtNoOfPayments);
 //        lblDate.setText(DateAndTime.DateToday());
 
+        intiwindow();
+
+    }
+
+    private void intiwindow() {
         MaterialUI.drawBorder(pneBody);
         lblDateManageCourse.setText(DateAndTime.DateToday());
 
@@ -53,9 +60,20 @@ public class ManageCoursesController {
             return new ReadOnlyObjectWrapper<>(new HBox(5, btnEdit, btnTrash));
         });
 
-        tblManageCourses.getItems().add(new CourseTM());
+        loadAllCourses();
+    }
+
+    private void loadAllCourses() {
+        tblManageCourses.getItems().clear();
+
+        CourseService cs = new CourseService();
+
+        for(Course course : cs.findAllCourses()){
+            tblManageCourses.getItems().add(new CourseTM(course.getName(), course.getFee(), course.getRegFee(), course.getNumberOfInstallments()));
+        }
 
     }
+
     public void btnBack_OnAction(ActionEvent actionEvent) {
     }
 

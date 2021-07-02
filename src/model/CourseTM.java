@@ -9,6 +9,16 @@ public class CourseTM implements Serializable {
     private String regFee;
     private String noOfInstallments;
 
+    public CourseTM() {
+    }
+
+    public CourseTM(String courseName, String courseFee, String regFee, String noOfInstallments) {
+        this.courseName = courseName;
+        this.courseFee = courseFee;
+        this.regFee = regFee;
+        this.noOfInstallments = noOfInstallments;
+    }
+
     public String getCourseName() {
         return courseName;
     }
