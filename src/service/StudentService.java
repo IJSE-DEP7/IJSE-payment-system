@@ -19,7 +19,7 @@ public class StudentService {
         studentDB.set(index, student);
     }
 
-    public void deleteStudent(String nic){
+    public static void deleteStudent(String nic){
         Student student = findStudent(nic);
         studentDB.remove(student);
     }
@@ -28,7 +28,7 @@ public class StudentService {
         return studentDB;
     }
 
-    public Student findStudent(String nic){
+    public static Student findStudent(String nic){
         for(Student student : studentDB){
             if(student.getNic().equals(nic)){
                 return student;
@@ -37,7 +37,7 @@ public class StudentService {
         return null;
     }
 
-    public List<Student> findStudents(String query){
+    public static List<Student> findStudents(String query){
         List<Student> result = new ArrayList<>();
 
         for (Student student : studentDB){

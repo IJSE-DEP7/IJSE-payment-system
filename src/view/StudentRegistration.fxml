@@ -10,9 +10,9 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="405.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.CourseRegistrationController">
+<AnchorPane prefHeight="405.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.StudentRegistrationController">
     <children>
-        <AnchorPane fx:id="pneBody" accessibleText="Course Name" layoutX="233.0" layoutY="74.0" prefHeight="405.0" prefWidth="500.0" style="-fx-background-color: white;" stylesheets="@css/CourseRegistration.css" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0">
+        <AnchorPane fx:id="pneBody" accessibleText="Course Name" layoutX="233.0" layoutY="74.0" prefHeight="405.0" prefWidth="500.0" style="-fx-background-color: white;" stylesheets="@css/StudentRegistration.css" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0">
             <children>
                 <Label layoutX="14.0" layoutY="14.0" text="Student Id :" AnchorPane.leftAnchor="15.0" AnchorPane.topAnchor="15.0">
                     <font>
@@ -34,17 +34,7 @@
                         <Font name="Ubuntu Bold" size="13.0" />
                     </font>
                 </Label>
-                <AnchorPane layoutX="12.0" layoutY="50.0" prefHeight="45.0" prefWidth="150.0">
-                    <children>
-                        <ComboBox fx:id="cmbCourse" accessibleText="Course Name" layoutY="26.0" opacity="0.44" prefHeight="25.0" prefWidth="140.0" promptText="Select Course" style="-fx-background-color: white;" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="15.0" />
-                    </children>
-                </AnchorPane>
-                <AnchorPane layoutX="170.0" layoutY="50.0" prefHeight="46.0" prefWidth="316.0">
-                    <children>
-                        <ComboBox fx:id="cmbQualification" accessibleText="Highest Qualification" layoutY="26.0" opacity="0.44" prefHeight="25.0" prefWidth="140.0" promptText="Select Student Highest Qualification" style="-fx-background-color: white;" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="15.0" />
-                    </children>
-                </AnchorPane>
-                <AnchorPane layoutX="15.0" layoutY="116.0" prefHeight="45.0" prefWidth="280.0">
+                <AnchorPane layoutX="14.0" layoutY="55.0" prefHeight="45.0" prefWidth="280.0" AnchorPane.leftAnchor="15.0" AnchorPane.topAnchor="55.0">
                     <children>
                         <TextField fx:id="txtName" accessibleText="Student Name" layoutY="10.0" promptText="Enter Student Name " style="-fx-background-color: white;" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="35.0" AnchorPane.topAnchor="15.0" />
                         <ImageView fx:id="chk" fitHeight="30.0" fitWidth="30.0" layoutX="254.0" layoutY="8.0" pickOnBounds="true" preserveRatio="true" visible="false" AnchorPane.bottomAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="11.0">
@@ -54,37 +44,7 @@
                         </ImageView>
                     </children>
                 </AnchorPane>
-                <AnchorPane layoutX="311.0" layoutY="116.0" prefHeight="45.0" prefWidth="175.0">
-                    <children>
-                        <TextField fx:id="txtPlacementExamMarks" accessibleText="Placement Exam Marks" layoutY="10.0" promptText="Enter Marks" style="-fx-background-color: white;" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="35.0" AnchorPane.topAnchor="15.0" />
-                        <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="140.0" layoutY="9.0" pickOnBounds="true" preserveRatio="true" visible="false" AnchorPane.bottomAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="11.0">
-                            <image>
-                                <Image url="@../assests/1.%20Enabled.png" />
-                            </image>
-                        </ImageView>
-                    </children>
-                </AnchorPane>
-                <AnchorPane layoutX="16.0" layoutY="180.0" prefHeight="46.0" prefWidth="469.0">
-                    <children>
-                        <TextField fx:id="txtAddress" accessibleText="Student Address" layoutY="10.0" promptText="Enter Student Address" style="-fx-background-color: white;" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="35.0" AnchorPane.topAnchor="15.0" />
-                        <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="436.0" layoutY="11.0" pickOnBounds="true" preserveRatio="true" visible="false" AnchorPane.bottomAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="11.0">
-                            <image>
-                                <Image url="@../assests/1.%20Enabled.png" />
-                            </image>
-                        </ImageView>
-                    </children>
-                </AnchorPane>
-                <AnchorPane accessibleText="Contact Number" layoutX="16.0" layoutY="304.0" prefHeight="45.0" prefWidth="175.0">
-                    <children>
-                        <TextField fx:id="txtContactNo" accessibleText="Contact Number" layoutY="10.0" promptText="Enter Contact No" style="-fx-background-color: white;" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="35.0" AnchorPane.topAnchor="15.0" />
-                        <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="140.0" layoutY="8.0" pickOnBounds="true" preserveRatio="true" visible="false" AnchorPane.bottomAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="11.0">
-                            <image>
-                                <Image url="@../assests/1.%20Enabled.png" />
-                            </image>
-                        </ImageView>
-                    </children>
-                </AnchorPane>
-                <AnchorPane accessibleText="Date Of Birth" layoutX="16.0" layoutY="246.0" prefHeight="45.0" prefWidth="175.0">
+                <AnchorPane accessibleText="Date Of Birth" layoutX="331.0" layoutY="55.0" prefHeight="45.0" prefWidth="175.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="55.0">
                     <children>
                         <TextField fx:id="txtDateOfBirth" accessibleText="Date Of Birth" layoutY="10.0" promptText="YYYY - MM - DD" style="-fx-background-color: white;" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="35.0" AnchorPane.topAnchor="15.0" />
                         <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="144.0" layoutY="3.0" pickOnBounds="true" preserveRatio="true" visible="false" AnchorPane.bottomAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="11.0">
@@ -94,17 +54,47 @@
                         </ImageView>
                     </children>
                 </AnchorPane>
-                <AnchorPane layoutX="206.0" layoutY="246.0" prefHeight="45.0" prefWidth="280.0">
+                <AnchorPane layoutX="19.0" layoutY="116.0" prefHeight="45.0" prefWidth="280.0" AnchorPane.leftAnchor="15.0" AnchorPane.topAnchor="115.0">
                     <children>
                         <TextField fx:id="txtEmail" accessibleText="Student Email Address" layoutY="10.0" promptText="Enter Student Email Address" style="-fx-background-color: white;" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="35.0" AnchorPane.topAnchor="15.0" />
-                        <ImageView  fitHeight="30.0" fitWidth="30.0" layoutX="248.0" layoutY="10.0" onMouseClicked="#lblAttachPhoto_OnMouseClicked" pickOnBounds="true" preserveRatio="true" visible="false" AnchorPane.bottomAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="11.0">
+                        <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="248.0" layoutY="10.0" onMouseClicked="#lblAttachPhoto_OnMouseClicked" pickOnBounds="true" preserveRatio="true" visible="false" AnchorPane.bottomAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="11.0">
                             <image>
                                 <Image url="@../assests/1.%20Enabled.png" />
                             </image>
                         </ImageView>
                     </children>
                 </AnchorPane>
-                <AnchorPane layoutX="206.0" layoutY="304.0" prefHeight="45.0" prefWidth="280.0">
+                <AnchorPane layoutX="311.0" layoutY="116.0" prefHeight="45.0" prefWidth="175.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="115.0">
+                    <children>
+                        <TextField fx:id="txtPlacementExamMarks" accessibleText="Placement Exam Marks" layoutY="10.0" promptText="Enter Marks" style="-fx-background-color: white;" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="35.0" AnchorPane.topAnchor="15.0" />
+                        <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="140.0" layoutY="9.0" pickOnBounds="true" preserveRatio="true" visible="false" AnchorPane.bottomAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="11.0">
+                            <image>
+                                <Image url="@../assests/1.%20Enabled.png" />
+                            </image>
+                        </ImageView>
+                    </children>
+                </AnchorPane>
+                <AnchorPane layoutX="19.0" layoutY="189.0" prefHeight="46.0" prefWidth="470.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="175.0">
+                    <children>
+                        <TextField fx:id="txtAddress" accessibleText="Student Address" layoutY="10.0" promptText="Enter Student Address" style="-fx-background-color: white;" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="35.0" AnchorPane.topAnchor="15.0" />
+                        <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="436.0" layoutY="11.0" pickOnBounds="true" preserveRatio="true" visible="false" AnchorPane.bottomAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="11.0">
+                            <image>
+                                <Image url="@../assests/1.%20Enabled.png" />
+                            </image>
+                        </ImageView>
+                    </children>
+                </AnchorPane>
+                <AnchorPane accessibleText="Contact Number" layoutX="17.0" layoutY="235.0" prefHeight="45.0" prefWidth="175.0" AnchorPane.leftAnchor="15.0" AnchorPane.topAnchor="235.0">
+                    <children>
+                        <TextField fx:id="txtContactNo" accessibleText="Contact Number" layoutY="10.0" promptText="Enter Contact No" style="-fx-background-color: white;" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="35.0" AnchorPane.topAnchor="15.0" />
+                        <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="140.0" layoutY="8.0" pickOnBounds="true" preserveRatio="true" visible="false" AnchorPane.bottomAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="11.0">
+                            <image>
+                                <Image url="@../assests/1.%20Enabled.png" />
+                            </image>
+                        </ImageView>
+                    </children>
+                </AnchorPane>
+                <AnchorPane layoutX="206.0" layoutY="304.0" prefHeight="45.0" prefWidth="280.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="235.0">
                     <children>
                         <TextField fx:id="txtNic" accessibleText="Student NIC" layoutY="10.0" promptText="Enter Student NIC" style="-fx-background-color: white;" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="35.0" AnchorPane.topAnchor="15.0" />
                         <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="246.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true" visible="false" AnchorPane.bottomAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="11.0">
@@ -112,6 +102,16 @@
                         <Image url="@../assests/1.%20Enabled.png" />
                      </image>
                         </ImageView>
+                    </children>
+                </AnchorPane>
+                <AnchorPane layoutX="19.0" layoutY="295.0" prefHeight="45.0" prefWidth="150.0" AnchorPane.leftAnchor="15.0" AnchorPane.topAnchor="295.0">
+                    <children>
+                        <ComboBox fx:id="cmbCourse" accessibleText="Course Name" layoutY="26.0" opacity="0.44" prefHeight="25.0" prefWidth="140.0" promptText="Select Course" style="-fx-background-color: white;" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="15.0" />
+                    </children>
+                </AnchorPane>
+                <AnchorPane layoutX="181.0" layoutY="281.0" prefHeight="46.0" prefWidth="316.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="295.0">
+                    <children>
+                        <ComboBox fx:id="cmbQualification" accessibleText="Highest Qualification" layoutY="26.0" opacity="0.44" prefHeight="25.0" prefWidth="140.0" promptText="Select Student Highest Qualification" style="-fx-background-color: white;" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="15.0" />
                     </children>
                 </AnchorPane>
                 <Label layoutX="15.0" layoutY="367.0" text="Part Time">

@@ -3,14 +3,17 @@ package controller;
 import javafx.beans.property.ReadOnlyObjectWrapper;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.input.KeyCode;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.HBox;
-import model.CourseTM;
 import model.Student;
 import model.StudentTM;
 import service.StudentService;
 import util.DateAndTime;
 import util.MaterialUI;
+
+import java.util.Optional;
 
 public class SearchStudentsController {
     public AnchorPane pneBody;
@@ -22,7 +25,6 @@ public class SearchStudentsController {
     public void initialize(){
 
         initwindow();
-        loadAllStudents();
     }
 
 
@@ -36,10 +38,10 @@ public class SearchStudentsController {
         tblSearchStudents.getColumns().get(1).setCellValueFactory(new PropertyValueFactory<>("address"));
         tblSearchStudents.getColumns().get(2).setCellValueFactory(new PropertyValueFactory<>("email"));
         tblSearchStudents.getColumns().get(3).setCellValueFactory(new PropertyValueFactory<>("contactNo"));
-        tblSearchStudents.getColumns().get(4).setCellValueFactory(new PropertyValueFactory<>("DOB"));
-        TableColumn<StudentTM, HBox> lastcol = (TableColumn<StudentTM,HBox>) tblSearchStudents.getColumns().get(5);
+        tblSearchStudents.getColumns().get(4).setCellValueFactory(new PropertyValueFactory<>("nic"));
+        TableColumn<StudentTM, HBox> lastCol = (TableColumn<StudentTM,HBox>) tblSearchStudents.getColumns().get(5);
 
-        lastcol.setCellValueFactory(param -> {
+        lastCol.setCellValueFactory(param -> {
 
             Button btnEdit = new Button();
             Button btnTrash = new Button();
@@ -47,19 +49,40 @@ public class SearchStudentsController {
             btnEdit.getStyleClass().add("edit-button");
             btnTrash.getStyleClass().add("trash-button");
 
+            btnTrash.setOnMouseClicked(event -> deleteStudent(param.getValue()));
+
             return new ReadOnlyObjectWrapper<>(new HBox(10, btnEdit, btnTrash));
         });
 
+        txtSearchStudent.textProperty().addListener((observable, oldValue, newValue) -> loadAllStudents(newValue));
+        loadAllStudents(null);
     }
 
-    private void loadAllStudents() {
+    private void deleteStudent(StudentTM tm){
+        try{
+            Optional<ButtonType> buttonType = new Alert(Alert.AlertType.CONFIRMATION,"Are you sure to delete this student",ButtonType.NO,ButtonType.YES).showAndWait();
+            if(buttonType.get()== ButtonType.YES){
+                StudentService.deleteStudent(tm.getNic());
+                tblSearchStudents.getItems().remove(tm);
+            }
+
+        }catch(RuntimeException e){
+            new Alert(Alert.AlertType.ERROR,"Failed to delete the item",ButtonType.OK).show();
+        }
+    }
+
+    private void loadAllStudents(String query) {
 
         tblSearchStudents.getItems().clear();
 
-        for(Student student : StudentService.findAllStudents()){
-            tblSearchStudents.getItems().add(new StudentTM(student.getName(),student.getAddress(),student.getEmail(),student.getContactNo(),student.getDateOfBirth()));
+        for(Student student : StudentService.findStudents(query==null || query.trim().isEmpty()?"":query)){
+            tblSearchStudents.getItems().add(new StudentTM(student.getName(),student.getAddress(),student.getEmail(),student.getContactNo(),student.getNic()));
         }
-
     }
 
+    public void tblSearchStudents_OnKeyPressed(KeyEvent keyEvent) {
+        if(keyEvent.getCode()== KeyCode.DELETE){
+            deleteStudent(tblSearchStudents.getSelectionModel().getSelectedItem());
+        }
+    }
 }

@@ -23,13 +23,13 @@
                         <Font name="Ubuntu Bold" size="13.0" />
                     </font>
                 </Label>
-                <TableView fx:id="tblSearchStudents" layoutX="20.0" layoutY="80.0" prefHeight="315.0" prefWidth="464.0" stylesheets="@css/SearchStudents.css" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="100.0">
+                <TableView fx:id="tblSearchStudents" layoutX="20.0" layoutY="80.0" onKeyPressed="#tblSearchStudents_OnKeyPressed" prefHeight="315.0" prefWidth="464.0" stylesheets="@css/SearchStudents.css" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="100.0">
                     <columns>
                         <TableColumn prefWidth="59.0" text="Name" />
                         <TableColumn prefWidth="93.0" text="Address&#10;" />
                         <TableColumn prefWidth="87.0" text="Email&#10;" />
                         <TableColumn prefWidth="75.0" text="Contact&#10;Number&#10;" />
-                        <TableColumn prefWidth="73.0" text="Date Of&#10;Birth&#10;" />
+                        <TableColumn prefWidth="73.0" text="NIC&#10;&#10;" />
                         <TableColumn prefWidth="85.0" text="&#10;" />
                     </columns>
                 </TableView>

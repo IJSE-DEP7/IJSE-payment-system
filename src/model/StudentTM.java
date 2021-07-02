@@ -7,17 +7,17 @@ public class StudentTM {
     private String address;
     private String email;
     private String contactNo;
-    private LocalDate DOB;
+    private String nic;
 
     public StudentTM() {
     }
 
-    public StudentTM(String name, String address, String email, String contactNo, LocalDate DOB) {
+    public StudentTM(String name, String address, String email, String contactNo, String nic) {
         this.name = name;
         this.address = address;
         this.email = email;
         this.contactNo = contactNo;
-        this.DOB = DOB;
+        this.nic = nic;
     }
 
     public String getName() {
@@ -52,12 +52,12 @@ public class StudentTM {
         this.contactNo = contactNo;
     }
 
-    public LocalDate getDOB() {
-        return DOB;
+    public String getNic() {
+        return nic;
     }
 
-    public void setDOB(LocalDate DOB) {
-        this.DOB = DOB;
+    public void setNic(String nic) {
+        this.nic = nic;
     }
 
     @Override
@@ -67,7 +67,7 @@ public class StudentTM {
                 ", address='" + address + '\'' +
                 ", email='" + email + '\'' +
                 ", contactNo='" + contactNo + '\'' +
-                ", DOB='" + DOB + '\'' +
+                ", nic='" + nic + '\'' +
                 '}';
     }
 }

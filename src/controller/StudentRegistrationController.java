@@ -14,7 +14,7 @@ import util.MaterialUI;
 
 import java.time.LocalDate;
 
-public class CourseRegistrationController {
+public class StudentRegistrationController {
     public AnchorPane pneBody;
     public ComboBox cmbCourse;
     public ComboBox cmbQualification;

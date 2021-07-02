@@ -19,7 +19,7 @@ public class MainFormController {
     public Label lblTitle;
     public AnchorPane pneSideBar;
     public Button btnDashBoard;
-    public Button btnCourseRegister;
+    public Button btnStudentRegister;
     public Button btnFeesPayment;
     public Button btnTransactionDetails;
     public Button btnSearchStudents;
@@ -63,8 +63,8 @@ public class MainFormController {
         navigate("/view/DashBoard.fxml","Dash Board");
     }
 
-    public void btnCourseRegister_OnAction(ActionEvent actionEvent) {
-        navigate("/view/CourseRegistration.fxml","Course Registration");
+    public void btnStudentRegister_OnAction(ActionEvent actionEvent) {
+        navigate("/view/StudentRegistration.fxml","Student Registration");
     }
 
     public void btnFeesPayment_OnAction(ActionEvent actionEvent) {
