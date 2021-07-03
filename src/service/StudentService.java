@@ -8,12 +8,12 @@ import java.util.List;
 public class StudentService {
     private static List<Student> studentDB = new ArrayList<>();
 
-    public void saveStudent(Student student){
+    public static void saveStudent(Student student){
 
         studentDB.add(student);
     }
 
-    public void updateStudent(Student student){
+    public static void updateStudent(Student student){
         Student s = findStudent(student.getNic());
         int index = studentDB.indexOf(s);
         studentDB.set(index, student);

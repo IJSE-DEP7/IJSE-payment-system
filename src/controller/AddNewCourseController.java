@@ -33,7 +33,6 @@ public class AddNewCourseController {
         initwindow();
     }
 
-    private CourseService cs = new CourseService();
     private void initwindow() {
         MaterialUI.paintTextFields(txtCourseId,txtCourseName,txtCourseFee,txtRegistrationFee,txtNoOfPayments);
         lblDateAddNewCourse.setText(DateAndTime.DateToday());
@@ -42,7 +41,7 @@ public class AddNewCourseController {
 
             if(root.getUserData()!=null){
                 CourseTM tm = (CourseTM) root.getUserData();
-                Course course = cs.findCourse(tm.getId());
+                Course course = CourseService.findCourse(tm.getId());
 
                 txtCourseId.setText(course.getId());
                 txtCourseName.setText(course.getName());

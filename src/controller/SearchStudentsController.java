@@ -50,12 +50,22 @@ public class SearchStudentsController {
             btnTrash.getStyleClass().add("trash-button");
 
             btnTrash.setOnMouseClicked(event -> deleteStudent(param.getValue()));
+            btnEdit.setOnMouseClicked(event -> updateStudent(param.getValue()));
 
             return new ReadOnlyObjectWrapper<>(new HBox(10, btnEdit, btnTrash));
         });
 
         txtSearchStudent.textProperty().addListener((observable, oldValue, newValue) -> loadAllStudents(newValue));
         loadAllStudents(null);
+    }
+
+    private void updateStudent(StudentTM tm){
+        try {
+            MainFormController ctrl = (MainFormController) pneBody.getScene().getUserData();
+            ctrl.navigate("/view/StudentRegistration.fxml","Update Student",tm);
+        } catch (RuntimeException e) {
+            new Alert(Alert.AlertType.ERROR,"Failed to update the student").show();
+        }
     }
 
     private void deleteStudent(StudentTM tm){
@@ -83,6 +93,9 @@ public class SearchStudentsController {
     public void tblSearchStudents_OnKeyPressed(KeyEvent keyEvent) {
         if(keyEvent.getCode()== KeyCode.DELETE){
             deleteStudent(tblSearchStudents.getSelectionModel().getSelectedItem());
+        }
+        if(keyEvent.getCode()== KeyCode.ENTER){
+            updateStudent(tblSearchStudents.getSelectionModel().getSelectedItem());
         }
     }
 }

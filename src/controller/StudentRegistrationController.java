@@ -1,13 +1,13 @@
 package controller;
 
+import javafx.application.Platform;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.scene.control.*;
-import javafx.scene.image.ImageView;
-import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import model.Course;
 import model.Student;
+import model.StudentTM;
 import service.CourseService;
 import service.StudentService;
 import util.DateAndTime;
@@ -32,6 +32,8 @@ public class StudentRegistrationController {
     public CheckBox chkFullTime;
     public TextField txtContactNo;
     public TextField txtNic;
+    public AnchorPane root;
+    public Button btnSave;
 
 
     public void initialize(){
@@ -47,17 +49,43 @@ public class StudentRegistrationController {
         checkBoxControl(chkPartTime,chkFullTime);
         checkBoxControl(chkFullTime,chkPartTime);
 
+
         ObservableList<String> courseList = cmbCourse.getItems();
         for (Course course: CourseService.findAllCourses()) {
             courseList.add(course.getName());
         }
+        Platform.runLater(()->{
+            if(root.getUserData()!=null){
+                StudentTM tm = (StudentTM) root.getUserData();
+                Student student = StudentService.findStudent(tm.getNic());
+                txtName.setText(student.getName());
+                txtDateOfBirth.setText(student.getDateOfBirth().toString());
+                txtEmail.setText(student.getEmail());
+                txtPlacementExamMarks.setText(student.getMarks());
+                txtAddress.setText(student.getAddress());
+                txtContactNo.setText(student.getContactNo());
+                txtNic.setText(student.getNic());
+                cmbCourse.setValue(CourseService.findCourse(student.getCourseId()).getName());
+                cmbQualification.setValue(student.getHighestQualification());
+                if(student.isFulltime()){
+                    chkFullTime.setSelected(true);
+                }else{
+                    chkPartTime.setSelected(true);
+                }
+                btnSave.setText("Update");
+
+            }
+        });
+
+
     }
     private void checkBoxControl(CheckBox clickedBox,CheckBox disableBox){
         clickedBox.setOnMouseClicked(event -> {
-            if(disableBox.isDisable()){
-                disableBox.setDisable(false);
-            }else{
+            if(clickedBox.isSelected()){
                 disableBox.setDisable(true);
+                disableBox.setSelected(false);
+            }else{
+                disableBox.setDisable(false);
             }
         });
     }
@@ -73,6 +101,8 @@ public class StudentRegistrationController {
         txtNic.clear();
         cmbCourse.getSelectionModel().clearSelection();
         cmbQualification.getSelectionModel().clearSelection();
+        chkPartTime.setSelected(false);
+        chkFullTime.setSelected(false);
     }
 
     public void btnSave_OnAction(ActionEvent actionEvent) {
@@ -87,12 +117,25 @@ public class StudentRegistrationController {
             String contactNo = txtContactNo.getText();
             String nic = txtNic.getText();
             Boolean fullTime = chkFullTime.isSelected();
+            Student student = new Student(courseId, highestQualification, name, marks, address, dob, email, nic, contactNo, fullTime);
 
-            Student student = new Student(courseId,highestQualification,name,marks,address,dob,email,nic,contactNo,fullTime);
-            StudentService studentService = new StudentService();
-            studentService.saveStudent(student);
-            System.out.println(student);
-            new Alert(Alert.AlertType.NONE,"Student has been saved successfully",ButtonType.OK).show();
+            if(btnSave.getText().equals("Update")){
+
+                StudentTM tm = (StudentTM) root.getUserData();
+                tm.setAddress(address);
+                tm.setContactNo(txtContactNo.getText());
+                tm.setEmail(txtEmail.getText());
+                tm.setNic(txtNic.getText());
+                tm.setName(txtName.getText());
+                StudentService.updateStudent(student);
+                new Alert(Alert.AlertType.NONE, "Student has been updated successfully", ButtonType.OK).show();
+
+            }else {
+
+                StudentService.saveStudent(student);
+                System.out.println(student);
+                new Alert(Alert.AlertType.NONE, "Student has been saved successfully", ButtonType.OK).show();
+            }
         }catch (RuntimeException e){
             new Alert(Alert.AlertType.ERROR,"Failed to save student",ButtonType.OK).show();
             return;
