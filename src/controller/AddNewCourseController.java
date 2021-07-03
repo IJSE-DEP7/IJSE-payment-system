@@ -81,18 +81,18 @@ public class AddNewCourseController {
                 Optional<ButtonType> buttonType = new Alert(Alert.AlertType.INFORMATION,"Are you sure to change the data", ButtonType.CANCEL,ButtonType.OK).showAndWait();
                 if(buttonType.get()==ButtonType.OK){
                     CourseService.updateCourse(c);
-                    new Alert(Alert.AlertType.INFORMATION,"Course has been updated successfully", ButtonType.OK).showAndWait();
+                    new Alert(Alert.AlertType.INFORMATION,"Course has been updated successfully", ButtonType.OK).show();
                 }
 
             }else{
 
                 CourseService.addNewCourse(c);
-                new Alert(Alert.AlertType.INFORMATION,"Course has been saved successfully", ButtonType.OK).showAndWait();
+                new Alert(Alert.AlertType.INFORMATION,"Course has been saved successfully", ButtonType.OK).show();
 
             }
 
         }catch(RuntimeException e){
-            new Alert(Alert.AlertType.ERROR,"Failed to save course", ButtonType.OK).showAndWait();
+            new Alert(Alert.AlertType.ERROR,"Failed to save course", ButtonType.OK).show();
         }
     }
 }

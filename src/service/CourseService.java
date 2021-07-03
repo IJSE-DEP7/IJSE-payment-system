@@ -44,6 +44,16 @@ public class CourseService {
         return null;
     }
 
+    public static Course findCourseByName(String name){
+        Course result;
+        for (Course course: courseDB) {
+            if(course.getName().equals(name)){
+                return course;
+            }
+        }
+        return null;
+    }
+
     public static List<Course> findAllCourses(){
         return courseDB;
     }

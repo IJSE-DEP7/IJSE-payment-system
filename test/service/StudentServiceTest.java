@@ -22,9 +22,9 @@ public class StudentServiceTest {
 
     private static void saveStudent() {
         StudentService studentService = new StudentService();
-        Student s = new Student("DEP","BSc Engineering","Test","75","address", LocalDate.now(),"email","932680963V","0711713745");
+        Student s = new Student("DEP","BSc Engineering","Test","75","address", LocalDate.now(),"email","932680963V","0711713745",true);
         studentService.saveStudent(s);
-        Student s2 = new Student("DEP","BSc Engineering","Test","75","address", LocalDate.now(),"email","123456789V","0718717626");
+        Student s2 = new Student("DEP","BSc Engineering","Test","75","address", LocalDate.now(),"email","123456789V","0718717626",true);
         studentService.saveStudent(s2);
         assert studentService.findStudent("932680963V")!=null: "my first assertion";
     }
@@ -32,7 +32,7 @@ public class StudentServiceTest {
 
     private static void updateStudent() {
         StudentService studentService = new StudentService();
-        Student s = new Student("DEP","BSc Engineering","New Student","75","address", LocalDate.now(),"email","932680963V","0717685593");
+        Student s = new Student("DEP","BSc Engineering","New Student","75","address", LocalDate.now(),"email","932680963V","0717685593",true);
         studentService.updateStudent(s);
         assert studentService.findStudent("932680963V")!=null:"failed update test";
         assert studentService.findStudent("932680963V").getName().equals("New Student"): "failed update method";
@@ -51,9 +51,9 @@ public class StudentServiceTest {
     }
 
     private static void findStudents() {
-        Student s3 = new Student("DEP","BSc Engineering","Dhanushka","75","address", LocalDate.now(),"email","283476987V","0775257919");
-        Student s4 = new Student("DEP","BSc Engineering","Manoj Chandimal","75","address", LocalDate.now(),"email","932690963V","0723424678");
-        Student s5 = new Student("DEP","BSc Engineering","Manoj Randeni","75","address", LocalDate.now(),"email","932698963V","0756767897");
+        Student s3 = new Student("DEP","BSc Engineering","Dhanushka","75","address", LocalDate.now(),"email","283476987V","0775257919",true);
+        Student s4 = new Student("DEP","BSc Engineering","Manoj Chandimal","75","address", LocalDate.now(),"email","932690963V","0723424678",true);
+        Student s5 = new Student("DEP","BSc Engineering","Manoj Randeni","75","address", LocalDate.now(),"email","932698963V","0756767897",true);
         StudentService studentService = new StudentService();
         studentService.saveStudent(s3);
         studentService.saveStudent(s4);

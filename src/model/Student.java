@@ -4,7 +4,8 @@ import java.io.Serializable;
 import java.time.LocalDate;
 
 public class Student implements Serializable {
-    String course;
+
+    String courseId;
     String highestQualification;
     String name;
     String marks;
@@ -13,14 +14,13 @@ public class Student implements Serializable {
     String email;
     String nic;
     String contactNo;
-
-
+    Boolean fulltime;
     public Student(){
 
     }
 
-    public Student(String course, String highestQualification, String name, String marks, String address, LocalDate dateOfBirth, String email, String nic,String contactNo) {
-        this.course = course;
+    public Student(String courseId, String highestQualification, String name, String marks, String address, LocalDate dateOfBirth, String email, String nic,String contactNo,Boolean fulltime) {
+        this.courseId = courseId;
         this.highestQualification = highestQualification;
         this.name = name;
         this.marks = marks;
@@ -29,15 +29,17 @@ public class Student implements Serializable {
         this.email = email;
         this.nic = nic;
         this.contactNo = contactNo;
+        this.fulltime=fulltime;
     }
 
-    public String getCourse() {
-        return course;
+    public String getCourseId() {
+
+        return courseId;
     }
 
-    public void setCourse(String course) {
+    public void setCourseId(String courseId) {
 
-        this.course = course;
+        this.courseId = courseId;
     }
 
     public String getHighestQualification() {
@@ -100,25 +102,37 @@ public class Student implements Serializable {
     }
 
     public String getNic() {
+
         return nic;
     }
 
     public void setNic(String nic) {
+
         this.nic = nic;
     }
 
     public String getContactNo() {
+
         return contactNo;
     }
 
     public void setContactNo(String contactNo) {
+
         this.contactNo = contactNo;
+    }
+
+    public Boolean isFulltime() {
+        return fulltime;
+    }
+
+    public void setFulltime(Boolean fulltime) {
+        this.fulltime = fulltime;
     }
 
     @Override
     public String toString() {
         return "Student{" +
-                "course='" + course + '\'' +
+                "courseId='" + courseId + '\'' +
                 ", highestQualification='" + highestQualification + '\'' +
                 ", name='" + name + '\'' +
                 ", marks='" + marks + '\'' +
@@ -127,6 +141,7 @@ public class Student implements Serializable {
                 ", email='" + email + '\'' +
                 ", nic='" + nic + '\'' +
                 ", contactNo='" + contactNo + '\'' +
+                ", fulltime=" + fulltime +
                 '}';
     }
 }

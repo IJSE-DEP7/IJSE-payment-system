@@ -1,11 +1,14 @@
 package controller;
 
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.scene.control.*;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
+import model.Course;
 import model.Student;
+import service.CourseService;
 import service.StudentService;
 import util.DateAndTime;
 import util.MaterialUI;
@@ -14,16 +17,14 @@ import java.time.LocalDate;
 
 public class StudentRegistrationController {
     public AnchorPane pneBody;
-    public ComboBox cmbCourse;
-    public ComboBox cmbQualification;
+    public ComboBox<String> cmbCourse;
+    public ComboBox<String> cmbQualification;
     public TextField txtName;
     public TextField txtPlacementExamMarks;
     public TextField txtAddress;
     public TextField txtDateOfBirth;
     public TextField txtEmail;
     public Button btnClearAll;
-    public Button btnNext;
-    public ImageView chk;
     public Label lblDate;
     public Label lbltime;
     public Label lblStudentId;
@@ -45,6 +46,11 @@ public class StudentRegistrationController {
         lblDate.setText(DateAndTime.DateToday());
         checkBoxControl(chkPartTime,chkFullTime);
         checkBoxControl(chkFullTime,chkPartTime);
+
+        ObservableList<String> courseList = cmbCourse.getItems();
+        for (Course course: CourseService.findAllCourses()) {
+            courseList.add(course.getName());
+        }
     }
     private void checkBoxControl(CheckBox clickedBox,CheckBox disableBox){
         clickedBox.setOnMouseClicked(event -> {
@@ -57,13 +63,22 @@ public class StudentRegistrationController {
     }
 
     public void btnClearAll_OnAction(ActionEvent actionEvent) {
-
+        txtName.clear();
+        txtDateOfBirth.clear();
+        txtEmail.clear();
+        txtPlacementExamMarks.clear();
+        txtPlacementExamMarks.clear();
+        txtAddress.clear();
+        txtContactNo.clear();
+        txtNic.clear();
+        cmbCourse.getSelectionModel().clearSelection();
+        cmbQualification.getSelectionModel().clearSelection();
     }
 
-    public void btnNext_OnAction(ActionEvent actionEvent) {
+    public void btnSave_OnAction(ActionEvent actionEvent) {
         try{
-            String course=cmbCourse.toString();
-            String highestQualification=cmbQualification.toString();
+            String courseId=CourseService.findCourseByName(cmbCourse.getSelectionModel().getSelectedItem()).getId();
+            String highestQualification=cmbQualification.getSelectionModel().getSelectedItem();
             String name = txtName.getText();
             String marks = txtPlacementExamMarks.getText();
             String address = txtAddress.getText();
@@ -71,25 +86,17 @@ public class StudentRegistrationController {
             String email = txtEmail.getText();
             String contactNo = txtContactNo.getText();
             String nic = txtNic.getText();
-            Student student = new Student(course,highestQualification,name,marks,address,dob,email,nic,contactNo);
+            Boolean fullTime = chkFullTime.isSelected();
+
+            Student student = new Student(courseId,highestQualification,name,marks,address,dob,email,nic,contactNo,fullTime);
             StudentService studentService = new StudentService();
             studentService.saveStudent(student);
+            System.out.println(student);
             new Alert(Alert.AlertType.NONE,"Student has been saved successfully",ButtonType.OK).show();
         }catch (RuntimeException e){
             new Alert(Alert.AlertType.ERROR,"Failed to save student",ButtonType.OK).show();
             return;
         }
-        MainFormController ctrl = (MainFormController) pneBody.getScene().getUserData();
-        ctrl.navigate("/view/FeesPayment.fxml","Fees Payment");
     }
 
-    public void lblAttachPhoto_OnMouseClicked(MouseEvent mouseEvent) {
-    }
-
-    public void chkPartTime_OnMouseClicked(MouseEvent mouseEvent) {
-
-    }
-
-    public void chkFullTime_OnMouseClocked(MouseEvent mouseEvent) {
-    }
 }

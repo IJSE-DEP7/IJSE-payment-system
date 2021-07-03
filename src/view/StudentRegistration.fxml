@@ -57,7 +57,7 @@
                 <AnchorPane layoutX="19.0" layoutY="116.0" prefHeight="45.0" prefWidth="280.0" AnchorPane.leftAnchor="15.0" AnchorPane.topAnchor="115.0">
                     <children>
                         <TextField fx:id="txtEmail" accessibleText="Student Email Address" layoutY="10.0" promptText="Enter Student Email Address" style="-fx-background-color: white;" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="35.0" AnchorPane.topAnchor="15.0" />
-                        <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="248.0" layoutY="10.0" onMouseClicked="#lblAttachPhoto_OnMouseClicked" pickOnBounds="true" preserveRatio="true" visible="false" AnchorPane.bottomAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="11.0">
+                        <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="248.0" layoutY="10.0"  pickOnBounds="true" preserveRatio="true" visible="false" AnchorPane.bottomAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="11.0">
                             <image>
                                 <Image url="@../assests/1.%20Enabled.png" />
                             </image>
@@ -125,9 +125,9 @@
                     </font>
                 </Label>
                 <Button fx:id="btnClearAll" layoutX="251.0" layoutY="357.0" mnemonicParsing="false" onAction="#btnClearAll_OnAction" prefHeight="36.0" prefWidth="120.0" style="-fx-background-color: Red;" styleClass="btn-reg" text="Clear All" textFill="WHITE" AnchorPane.rightAnchor="120.0" />
-                <Button fx:id="btnNext" layoutX="395.0" layoutY="357.0" mnemonicParsing="false" onAction="#btnNext_OnAction" prefHeight="36.0" prefWidth="90.0" style="-fx-background-color: Blue;" styleClass="btn-reg" text="Next" textFill="WHITE" AnchorPane.rightAnchor="15.0" />
-            <CheckBox fx:id="chkPartTime" layoutX="92.0" layoutY="366.0" mnemonicParsing="false" onMouseClicked="#chkPartTime_OnMouseClicked" />
-            <CheckBox fx:id="chkFullTime" layoutX="216.0" layoutY="366.0" mnemonicParsing="false" onMouseClicked="#chkFullTime_OnMouseClocked" />
+                <Button fx:id="btnSave" layoutX="395.0" layoutY="357.0" mnemonicParsing="false" onAction="#btnSave_OnAction" prefHeight="36.0" prefWidth="90.0" style="-fx-background-color: Blue;" styleClass="btn-reg" text="Save" textFill="WHITE" AnchorPane.rightAnchor="15.0" />
+            <CheckBox fx:id="chkPartTime" layoutX="92.0" layoutY="366.0" mnemonicParsing="false" />
+            <CheckBox fx:id="chkFullTime" layoutX="216.0" layoutY="366.0" mnemonicParsing="false"  />
             </children>
         </AnchorPane>
     </children>
