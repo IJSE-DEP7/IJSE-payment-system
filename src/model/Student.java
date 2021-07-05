@@ -14,12 +14,13 @@ public class Student implements Serializable {
     String email;
     String nic;
     String contactNo;
+    String batchNo;
     Boolean fulltime;
+
     public Student(){
 
     }
-
-    public Student(String courseId, String highestQualification, String name, String marks, String address, LocalDate dateOfBirth, String email, String nic,String contactNo,Boolean fulltime) {
+    public Student(String courseId, String highestQualification, String name, String marks, String address, LocalDate dateOfBirth, String email, String nic, String contactNo, Boolean fulltime) {
         this.courseId = courseId;
         this.highestQualification = highestQualification;
         this.name = name;
@@ -29,6 +30,20 @@ public class Student implements Serializable {
         this.email = email;
         this.nic = nic;
         this.contactNo = contactNo;
+        this.fulltime=fulltime;
+    }
+
+    public Student(String courseId, String highestQualification, String name, String marks, String address, LocalDate dateOfBirth, String email, String nic, String contactNo, String batchNo, Boolean fulltime) {
+        this.courseId = courseId;
+        this.highestQualification = highestQualification;
+        this.name = name;
+        this.marks = marks;
+        this.address = address;
+        this.dateOfBirth = dateOfBirth;
+        this.email = email;
+        this.nic = nic;
+        this.contactNo = contactNo;
+        this.batchNo=batchNo;
         this.fulltime=fulltime;
     }
 
@@ -119,6 +134,14 @@ public class Student implements Serializable {
     public void setContactNo(String contactNo) {
 
         this.contactNo = contactNo;
+    }
+
+    public String getBatchNo() {
+        return batchNo;
+    }
+
+    public void setBatchNo(String batchNo) {
+        this.batchNo = batchNo;
     }
 
     public Boolean isFulltime() {

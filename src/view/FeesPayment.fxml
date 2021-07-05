@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="405.0" prefWidth="500.0" stylesheets="@css/FeesPayment.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.FeesPaymentController">
+<AnchorPane fx:id="root" prefHeight="405.0" prefWidth="500.0" stylesheets="@css/FeesPayment.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.FeesPaymentController">
     <children>
         <AnchorPane fx:id="pneBody" accessibleText="Course Name" layoutX="233.0" layoutY="74.0" prefHeight="405.0" prefWidth="500.0" style="-fx-background-color: white;" stylesheets="@css/StudentRegistration.css" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0">
             <children>
@@ -36,7 +36,7 @@
                 </AnchorPane>
                 <AnchorPane layoutX="22.0" layoutY="42.0" prefHeight="46.0" prefWidth="473.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="45.0">
                     <children>
-                        <TextField fx:id="txtSearchStudent" accessibleText="Query" layoutY="10.0" prefHeight="25.0" prefWidth="420.0" promptText="Search Student By NIC, Contact Number, Email, Student Id No" style="-fx-background-color: white;" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="35.0" AnchorPane.topAnchor="15.0" />
+                        <TextField fx:id="txtSearchStudent" accessibleText="Query" layoutY="10.0" prefHeight="25.0" prefWidth="420.0" promptText="Search Student By Student NIC" style="-fx-background-color: white;" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="35.0" AnchorPane.topAnchor="15.0" />
                         <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="254.0" layoutY="8.0" pickOnBounds="true" preserveRatio="true" visible="false" AnchorPane.bottomAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="11.0">
                             <image>
                                 <Image url="@../assests/1.%20Enabled.png" />
@@ -66,7 +66,7 @@
                 </AnchorPane>
                 <AnchorPane accessibleText="Due Date of Next Payment" layoutX="293.0" layoutY="225.0" prefHeight="45.0" prefWidth="175.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="225.0">
                     <children>
-                        <TextField fx:id="txtCommencementDate" accessibleText="Commencement Date" layoutY="10.0" promptText="YYYY - MM -DD" style="-fx-background-color: white;" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="35.0" AnchorPane.topAnchor="15.0" />
+                        <TextField fx:id="txtNextPaymentDate" accessibleText="Next Payment Date" layoutY="10.0" promptText="YYYY - MM -DD" style="-fx-background-color: white;" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="35.0" AnchorPane.topAnchor="15.0" />
                         <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="140.0" layoutY="8.0" pickOnBounds="true" preserveRatio="true" visible="false" AnchorPane.bottomAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="11.0">
                             <image>
                                 <Image url="@../assests/1.%20Enabled.png" />
@@ -106,8 +106,8 @@
                 </Label>
                 <Button fx:id="btnClearAll" layoutX="251.0" layoutY="357.0" mnemonicParsing="false" onAction="#btnClearAll_OnAction" prefHeight="36.0" prefWidth="120.0" style="-fx-background-color: Red;" styleClass="btn-pay" text="Clear All" textFill="WHITE" AnchorPane.rightAnchor="120.0" />
                 <Button fx:id="btnNext" layoutX="395.0" layoutY="357.0" mnemonicParsing="false" onAction="#btnSubmit_OnAction" prefHeight="36.0" prefWidth="90.0" style="-fx-background-color: Blue;" styleClass="btn-pay" text="Submit" textFill="WHITE" AnchorPane.rightAnchor="15.0" />
-                <CheckBox layoutX="104.0" layoutY="366.0" mnemonicParsing="false" />
-                <CheckBox layoutX="238.0" layoutY="366.0" mnemonicParsing="false" />
+                <CheckBox fx:id="chkSendEmail" layoutX="104.0" layoutY="366.0" mnemonicParsing="false" />
+                <CheckBox fx:id="chkPrintReciept" layoutX="238.0" layoutY="366.0" mnemonicParsing="false" />
             <AnchorPane layoutX="15.0" layoutY="288.0" prefHeight="45.0" prefWidth="175.0" AnchorPane.leftAnchor="15.0" AnchorPane.topAnchor="285.0">
                <children>
                   <TextField fx:id="txtRecieptAmount" accessibleText="Reciept Amount" layoutY="10.0" promptText="Reciept Amount" style="-fx-background-color: white;" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="35.0" AnchorPane.topAnchor="15.0" />
@@ -146,6 +146,16 @@
                   </ImageView>
                </children>
             </AnchorPane>
+            <Label layoutX="15.0" layoutY="23.0" text="Payment Id :" AnchorPane.leftAnchor="15.0" AnchorPane.topAnchor="15.0">
+               <font>
+                  <Font name="Ubuntu Bold" size="13.0" />
+               </font>
+            </Label>
+            <Label fx:id="lblId" layoutX="100.0" layoutY="10.0" text="P-0001" AnchorPane.leftAnchor="95.0" AnchorPane.topAnchor="15.0">
+               <font>
+                  <Font name="Ubuntu Bold" size="13.0" />
+               </font>
+            </Label>
             </children>
         </AnchorPane>
     </children>

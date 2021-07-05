@@ -61,6 +61,8 @@ public class MainFormController {
         }
     }
 
+    //public void navigate(String url,String title,Object data,)
+
     /*
             Methods of sidebar
     */
@@ -96,8 +98,8 @@ public class MainFormController {
         navigate("/view/ManageExpenses.fxml","Manage Expenses");
     }
 
-    public void btnExit_OnAction(ActionEvent actionEvent) {
-        ((Stage)pneStage.getScene().getWindow()).close();
+    public void btnSearchPayment_OnAction(ActionEvent actionEvent) {
+        navigate("/view/FeesPayment.fxml","Fees Payment");
     }
 
     public void lblMenu_OnMouseClicked(MouseEvent mouseEvent) {

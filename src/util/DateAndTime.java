@@ -11,4 +11,6 @@ public class DateAndTime {
         return DateToday;
     }
 
+    //TODO:create method for getting time
+
 }
