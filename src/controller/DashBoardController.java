@@ -7,6 +7,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import model.DashBoardTM;
+import util.DateAndTime;
 import util.MaterialUI;
 
 public class DashBoardController {
@@ -24,6 +25,8 @@ public class DashBoardController {
     public void initialize(){
 
         MaterialUI.drawBorder(pneBody);
+        lblDate.setText(DateAndTime.DateToday());
+        lbltime.setText(DateAndTime.timeNow());
         tblDashBoard.getItems().add(new DashBoardTM());
         tblDashBoard.getItems().add(new DashBoardTM());
         tblDashBoard.getItems().add(new DashBoardTM());

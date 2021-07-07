@@ -47,6 +47,7 @@ public class StudentRegistrationController {
         MaterialUI.addCheckBox(txtName,txtPlacementExamMarks,txtAddress,txtContactNo,txtDateOfBirth,txtEmail,txtNic);
         MaterialUI.drawBorder(pneBody);
         lblDate.setText(DateAndTime.DateToday());
+        lbltime.setText(DateAndTime.timeNow());
         checkBoxControl(chkPartTime,chkFullTime);
         checkBoxControl(chkFullTime,chkPartTime);
 

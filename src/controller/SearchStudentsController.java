@@ -33,6 +33,7 @@ public class SearchStudentsController {
         MaterialUI.paintTextFields(txtSearchStudent);
         MaterialUI.addCheckBox(txtSearchStudent);
         lblDate.setText(DateAndTime.DateToday());
+        lbltime.setText(DateAndTime.timeNow());
 
         tblSearchStudents.getColumns().get(0).setCellValueFactory(new PropertyValueFactory<>("name"));
         tblSearchStudents.getColumns().get(1).setCellValueFactory(new PropertyValueFactory<>("address"));

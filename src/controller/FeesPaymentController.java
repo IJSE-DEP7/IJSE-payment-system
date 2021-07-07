@@ -59,6 +59,8 @@ public class FeesPaymentController {
             }else if(root.getAccessibleText().equals("searchPayment")){
 
                 txtSearchStudent.setPromptText("Search Payment By Id");
+                btnClearAll.setText("Delete");
+                btnSubmit.setText("Update");
                 txtSearchStudent.textProperty().addListener((observable, oldValue, newValue) -> { findPayment(newValue); });
             }
         });
@@ -68,7 +70,7 @@ public class FeesPaymentController {
         MaterialUI.addCheckBox(txtBatchNo,txtNextPayment,txtDescription,txtRecieptAmount,txtRecievedAmount,txtNextPaymentDate,txtSearchStudent,txtStudentEmail,txtStudentName);
         MaterialUI.drawBorder(pneBody);
         lblDate.setText(DateAndTime.DateToday());
-
+        lbltime.setText(DateAndTime.timeNow());
 
         //lblId.setText(PaymentService.getPaymentId());
 
@@ -113,28 +115,38 @@ public class FeesPaymentController {
 
 
     public void btnClearAll_OnAction(ActionEvent actionEvent) {
-        txtSearchStudent.clear();
-        txtStudentName.clear();
-        cmbCourse.getSelectionModel().clearSelection();
-        txtStudentEmail.clear();
-        cmbPaymentMethod.getSelectionModel().clearSelection();
-        txtBatchNo.clear();
-        txtDescription.clear();
-        txtNextPaymentDate.clear();
-        txtRecieptAmount.clear();
-        txtRecievedAmount.clear();
-        txtStudentEmail.clear();
-        chkPrintReciept.setSelected(false);
-        chkSendEmail.setSelected(false);
+        if(btnClearAll.getText().equals("Clear All")){
+            txtSearchStudent.clear();
+            txtStudentName.clear();
+            cmbCourse.getSelectionModel().clearSelection();
+            txtStudentEmail.clear();
+            cmbPaymentMethod.getSelectionModel().clearSelection();
+            txtBatchNo.clear();
+            txtDescription.clear();
+            txtNextPaymentDate.clear();
+            txtRecieptAmount.clear();
+            txtRecievedAmount.clear();
+            txtStudentEmail.clear();
+            chkPrintReciept.setSelected(false);
+            chkSendEmail.setSelected(false);
+        }
+        else{
+            Payment payment = PaymentService.findPayment(txtSearchStudent.getText());
+            if(payment!=null){
+                PaymentService.deletePayment(payment);
+                txtSearchStudent.clear();
+            }
+        }
+
     }
 
     public void btnSubmit_OnAction(ActionEvent actionEvent) {
         try{
             if(chkSendEmail.isSelected()){
-
+                sendEmail();
             }
-            if(chkPrintReciept.isSelected()){
-
+            if(chkPrintReciept.isSelected()) {
+                printReciept();
             }
             Payment payment = new Payment(txtSearchStudent.getText(),"userNIC","P-0001",txtDescription.getText(),txtRecievedAmount.getText(), LocalDate.parse(txtNextPaymentDate.getText()),cmbPaymentMethod.getSelectionModel().getSelectedItem(),txtRecieptAmount.getText());
             //TODO:Find and fill userNIC
@@ -147,10 +159,11 @@ public class FeesPaymentController {
         }
     }
 
-    public void btnSearch_Payment(KeyEvent keyEvent) {
-        if(keyEvent.getCode()== KeyCode.ENTER){
-            //findStudent(txtSearchStudent.getText());
-        }
-
+    private void printReciept() {
+        System.out.println("reciept");
     }
+
+    private void sendEmail() {
+    }
+
 }

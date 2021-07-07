@@ -23,6 +23,7 @@ public class PaymentAlertsController {
     public void initialize(){
         MaterialUI.drawBorder(pneBody);
         lblDate.setText(DateAndTime.DateToday());
+        lbltime.setText(DateAndTime.timeNow());
         tblPaymentAlerts.getColumns().get(0).setCellValueFactory(new PropertyValueFactory<>("courseName"));
         tblPaymentAlerts.getColumns().get(1).setCellValueFactory(new PropertyValueFactory<>("studentName"));
         tblPaymentAlerts.getColumns().get(2).setCellValueFactory(new PropertyValueFactory<>("contactNo"));

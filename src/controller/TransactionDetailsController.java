@@ -6,6 +6,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
+import util.DateAndTime;
 import util.MaterialUI;
 
 public class TransactionDetailsController {
@@ -25,6 +26,8 @@ public class TransactionDetailsController {
         MaterialUI.paintTextFields(txtstartDate,txtLastDay);
         MaterialUI.drawBorder(pneBody);
         MaterialUI.addCheckBox(txtstartDate,txtLastDay);
+        lblDate.setText(DateAndTime.DateToday());
+        lbltime.setText(DateAndTime.timeNow());
     }
     public void btnSearch_OnAction(ActionEvent actionEvent) {
     }

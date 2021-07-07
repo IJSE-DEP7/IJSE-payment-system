@@ -13,9 +13,7 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import javafx.util.Duration;
-import model.Payment;
 import util.MaterialUI;
-import util.PaymentAction;
 
 public class MainFormController {
     public Label lblTitle;
@@ -46,9 +44,6 @@ public class MainFormController {
         navigate(url,title,null);
     }
 
-    public void navigate(String url, String title,Object data,PaymentAction action){
-
-    }
     public void navigate(String url, String title, Object data){
         try{
             Parent root = FXMLLoader.load(this.getClass().getResource(url));

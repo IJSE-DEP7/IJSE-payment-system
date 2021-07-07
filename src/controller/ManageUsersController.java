@@ -25,6 +25,7 @@ public class ManageUsersController {
     private void initwindow() {
         MaterialUI.drawBorder(pneBody);
         lblDate.setText(DateAndTime.DateToday());
+        lbltime.setText(DateAndTime.timeNow());
 
         tblManageUsers.getColumns().get(0).setCellValueFactory(new PropertyValueFactory<>("name"));
         tblManageUsers.getColumns().get(1).setCellValueFactory(new PropertyValueFactory<>("address"));

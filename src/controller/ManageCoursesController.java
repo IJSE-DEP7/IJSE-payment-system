@@ -51,6 +51,7 @@ public class ManageCoursesController {
     private void intiwindow() {
         MaterialUI.drawBorder(pneBody);
         lblDateManageCourse.setText(DateAndTime.DateToday());
+        lbltimeManageCourse.setText(DateAndTime.timeNow());
 
         tblManageCourses.getColumns().get(0).setCellValueFactory(new PropertyValueFactory<>("id"));
         tblManageCourses.getColumns().get(1).setCellValueFactory(new PropertyValueFactory<>("courseName"));

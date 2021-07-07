@@ -6,6 +6,7 @@ import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
+import util.DateAndTime;
 import util.MaterialUI;
 
 public class AddNewExpenseController {
@@ -28,6 +29,8 @@ public class AddNewExpenseController {
         MaterialUI.paintTextFields(txtExpense,txtAmount,txtPassword);
         MaterialUI.paintComboBox(cmbMethod);
         MaterialUI.addCheckBox(txtExpense,txtAmount,txtPassword);
+        lblDate.setText(DateAndTime.DateToday());
+        lbltime.setText(DateAndTime.timeNow());
     }
 
     public void btnBack_OnAction(ActionEvent actionEvent) {

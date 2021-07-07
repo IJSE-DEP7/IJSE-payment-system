@@ -12,5 +12,10 @@ public class DateAndTime {
     }
 
     //TODO:create method for getting time
+    public static String timeNow(){
+        String time = "";
+        
+        return time;
+    }
 
 }
