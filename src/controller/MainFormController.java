@@ -13,7 +13,9 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import javafx.util.Duration;
+import model.Payment;
 import util.MaterialUI;
+import util.PaymentAction;
 
 public class MainFormController {
     public Label lblTitle;
@@ -33,6 +35,7 @@ public class MainFormController {
     public AnchorPane window;
     public ImageView imgMinimize;
     public ImageView imgClose;
+    private Object Payment;
 
 
     public void initialize(){
@@ -43,7 +46,10 @@ public class MainFormController {
         navigate(url,title,null);
     }
 
-    public void navigate(String url, String title,Object data){
+    public void navigate(String url, String title,Object data,PaymentAction action){
+
+    }
+    public void navigate(String url, String title, Object data){
         try{
             Parent root = FXMLLoader.load(this.getClass().getResource(url));
             root.setUserData(data);
@@ -55,13 +61,20 @@ public class MainFormController {
             ft.play();
 
             pneStage.getChildren().add(root);
+            paymentAction((AnchorPane)root,title);
             lblTitle.setText(title);
         }catch(Exception e){
             e.printStackTrace();
         }
     }
 
-    //public void navigate(String url,String title,Object data,)
+    private void paymentAction(AnchorPane root, String title){
+        if(title.equals("Fees Payment")){
+            root.setAccessibleText("newPayment");
+        }else if(title.equals("Search Payment")){
+            root.setAccessibleText("searchPayment");
+        }
+    }
 
     /*
             Methods of sidebar
@@ -76,6 +89,7 @@ public class MainFormController {
 
     public void btnFeesPayment_OnAction(ActionEvent actionEvent) {
         navigate("/view/FeesPayment.fxml","Fees Payment");
+
     }
 
     public void btnTransactionDetails_OnAction(ActionEvent actionEvent) {
@@ -99,7 +113,7 @@ public class MainFormController {
     }
 
     public void btnSearchPayment_OnAction(ActionEvent actionEvent) {
-        navigate("/view/FeesPayment.fxml","Fees Payment");
+        navigate("/view/FeesPayment.fxml","Search Payment");
     }
 
     public void lblMenu_OnMouseClicked(MouseEvent mouseEvent) {

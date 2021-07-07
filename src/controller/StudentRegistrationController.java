@@ -138,7 +138,7 @@ public class StudentRegistrationController {
                 Optional<ButtonType> buttonType=new Alert(Alert.AlertType.CONFIRMATION, "Is student paid now?", ButtonType.YES,ButtonType.NO).showAndWait();
                 if (buttonType.get()==ButtonType.YES){
                     MainFormController ctrl = (MainFormController) pneBody.getScene().getUserData();
-                    ctrl.navigate("/view/StudentRegistration.fxml","Student Registration",student);
+                    ctrl.navigate("/view/FeesPayment.fxml","Fees Payment",student);
                 }else{
                     new Alert(Alert.AlertType.NONE,"Student data has been saved successfully",ButtonType.OK).show();
                 }

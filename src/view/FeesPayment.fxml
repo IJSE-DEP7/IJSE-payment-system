@@ -12,7 +12,7 @@
 
 <AnchorPane fx:id="root" prefHeight="405.0" prefWidth="500.0" stylesheets="@css/FeesPayment.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.FeesPaymentController">
     <children>
-        <AnchorPane fx:id="pneBody" accessibleText="Course Name" layoutX="233.0" layoutY="74.0" prefHeight="405.0" prefWidth="500.0" style="-fx-background-color: white;" stylesheets="@css/StudentRegistration.css" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0">
+        <AnchorPane fx:id="pneBody" accessibleText="Course Name" layoutX="233.0" layoutY="74.0" onKeyPressed="#btnSearch_Payment" prefHeight="405.0" prefWidth="500.0" style="-fx-background-color: white;" stylesheets="@css/StudentRegistration.css" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0">
             <children>
                 <Label fx:id="lblDate" layoutX="242.0" layoutY="14.0" text="05 - June  - 2021" AnchorPane.leftAnchor="240.0" AnchorPane.topAnchor="15.0">
                     <font>
@@ -105,7 +105,7 @@
                     </font>
                 </Label>
                 <Button fx:id="btnClearAll" layoutX="251.0" layoutY="357.0" mnemonicParsing="false" onAction="#btnClearAll_OnAction" prefHeight="36.0" prefWidth="120.0" style="-fx-background-color: Red;" styleClass="btn-pay" text="Clear All" textFill="WHITE" AnchorPane.rightAnchor="120.0" />
-                <Button fx:id="btnNext" layoutX="395.0" layoutY="357.0" mnemonicParsing="false" onAction="#btnSubmit_OnAction" prefHeight="36.0" prefWidth="90.0" style="-fx-background-color: Blue;" styleClass="btn-pay" text="Submit" textFill="WHITE" AnchorPane.rightAnchor="15.0" />
+                <Button fx:id="btnSubmit" layoutX="395.0" layoutY="357.0" mnemonicParsing="false" onAction="#btnSubmit_OnAction" prefHeight="36.0" prefWidth="90.0" style="-fx-background-color: Blue;" styleClass="btn-pay" text="Submit" textFill="WHITE" AnchorPane.rightAnchor="15.0" />
                 <CheckBox fx:id="chkSendEmail" layoutX="104.0" layoutY="366.0" mnemonicParsing="false" />
                 <CheckBox fx:id="chkPrintReciept" layoutX="238.0" layoutY="366.0" mnemonicParsing="false" />
             <AnchorPane layoutX="15.0" layoutY="288.0" prefHeight="45.0" prefWidth="175.0" AnchorPane.leftAnchor="15.0" AnchorPane.topAnchor="285.0">
