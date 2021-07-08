@@ -1,7 +1,11 @@
 package util;
 
+import javafx.concurrent.Task;
+import javafx.scene.control.Label;
+
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
+import java.util.Date;
 
 public class DateAndTime {
 
@@ -11,11 +15,22 @@ public class DateAndTime {
         return DateToday;
     }
 
-    //TODO:create method for getting time
-    public static String timeNow(){
-        String time = "";
-        
-        return time;
+    public static void timeNow(Label lbl){
+        Task task = new Task(){
+            protected Object call()throws Exception{
+                while (true) {
+                    String time = String.format("%tT", new Date());
+                    try {
+                        Thread.sleep(900);
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+                    updateMessage(time);
+                }
+            }
+        };
+        new Thread(task).start();
+        lbl.textProperty().bind(task.messageProperty());
     }
 
 }

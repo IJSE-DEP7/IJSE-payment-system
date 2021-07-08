@@ -26,7 +26,7 @@ public class DashBoardController {
 
         MaterialUI.drawBorder(pneBody);
         lblDate.setText(DateAndTime.DateToday());
-        lbltime.setText(DateAndTime.timeNow());
+        DateAndTime.timeNow(lbltime);
         tblDashBoard.getItems().add(new DashBoardTM());
         tblDashBoard.getItems().add(new DashBoardTM());
         tblDashBoard.getItems().add(new DashBoardTM());

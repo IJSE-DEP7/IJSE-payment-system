@@ -36,7 +36,7 @@ public class AddNewCourseController {
     private void initwindow() {
         MaterialUI.paintTextFields(txtCourseId,txtCourseName,txtCourseFee,txtRegistrationFee,txtNoOfPayments);
         lblDateAddNewCourse.setText(DateAndTime.DateToday());
-        lbltimeAddNewCourse.setText(DateAndTime.timeNow());
+        DateAndTime.timeNow(lbltimeAddNewCourse);
         MaterialUI.addCheckBox(txtCourseId,txtCourseName,txtCourseFee,txtRegistrationFee,txtNoOfPayments);
         Platform.runLater(()->{
 

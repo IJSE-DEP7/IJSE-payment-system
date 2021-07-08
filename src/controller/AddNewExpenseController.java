@@ -30,7 +30,7 @@ public class AddNewExpenseController {
         MaterialUI.paintComboBox(cmbMethod);
         MaterialUI.addCheckBox(txtExpense,txtAmount,txtPassword);
         lblDate.setText(DateAndTime.DateToday());
-        lbltime.setText(DateAndTime.timeNow());
+        DateAndTime.timeNow(lbltime);
     }
 
     public void btnBack_OnAction(ActionEvent actionEvent) {

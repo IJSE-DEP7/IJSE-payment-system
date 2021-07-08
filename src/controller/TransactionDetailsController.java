@@ -27,7 +27,7 @@ public class TransactionDetailsController {
         MaterialUI.drawBorder(pneBody);
         MaterialUI.addCheckBox(txtstartDate,txtLastDay);
         lblDate.setText(DateAndTime.DateToday());
-        lbltime.setText(DateAndTime.timeNow());
+        DateAndTime.timeNow(lbltime);
     }
     public void btnSearch_OnAction(ActionEvent actionEvent) {
     }

@@ -40,11 +40,6 @@
                   <Font name="Ubuntu Bold" size="14.0" />
                </font>
             </Text>
-            <Text fx:id="txtTime" layoutX="413.0" layoutY="24.0" strokeType="OUTSIDE" strokeWidth="0.0" text="15  : 55 : 50">
-               <font>
-                  <Font name="Ubuntu Bold" size="14.0" />
-               </font>
-            </Text>
             <VBox layoutX="40.0" layoutY="98.0">
                <children>
                   <AnchorPane prefHeight="50.0" prefWidth="430.0">

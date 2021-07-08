@@ -70,7 +70,7 @@ public class FeesPaymentController {
         MaterialUI.addCheckBox(txtBatchNo,txtNextPayment,txtDescription,txtRecieptAmount,txtRecievedAmount,txtNextPaymentDate,txtSearchStudent,txtStudentEmail,txtStudentName);
         MaterialUI.drawBorder(pneBody);
         lblDate.setText(DateAndTime.DateToday());
-        lbltime.setText(DateAndTime.timeNow());
+        DateAndTime.timeNow(lbltime);
 
         //lblId.setText(PaymentService.getPaymentId());
 

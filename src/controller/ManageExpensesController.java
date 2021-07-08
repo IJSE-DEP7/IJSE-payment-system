@@ -26,7 +26,7 @@ public class ManageExpensesController {
     private void initwindow() {
         MaterialUI.drawBorder(pneBody);
         lblDate.setText(DateAndTime.DateToday());
-        lbltime.setText(DateAndTime.timeNow());
+        DateAndTime.timeNow(lbltime);
 
         tblManageExpenses.getColumns().get(0).setCellValueFactory(new PropertyValueFactory<>("expense"));
         tblManageExpenses.getColumns().get(1).setCellValueFactory(new PropertyValueFactory<>("amount"));

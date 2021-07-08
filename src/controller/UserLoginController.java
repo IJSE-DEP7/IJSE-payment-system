@@ -26,7 +26,6 @@ public class UserLoginController {
     public AnchorPane pneBody;
     public Text txtDate;
     public Button btnLogin;
-    public Text txtTime;
     public Text txtForgotPassword;
     public Text txtSignUp;
     public ImageView icnMinimize;
