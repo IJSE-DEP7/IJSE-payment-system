@@ -11,6 +11,7 @@ public class ExpenseService {
 
     public static void saveExpense(Expense expense){
         expenseDB.add(expense);
+        System.out.println(expense);
     }
 
     public static void updateExpense(Expense expense){

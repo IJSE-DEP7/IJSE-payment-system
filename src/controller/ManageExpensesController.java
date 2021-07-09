@@ -2,16 +2,18 @@ package controller;
 
 import javafx.beans.property.ReadOnlyObjectWrapper;
 import javafx.event.ActionEvent;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
+import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.input.KeyCode;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.HBox;
+import model.Expense;
 import model.ExpenseTM;
+import service.ExpenseService;
 import util.DateAndTime;
 import util.MaterialUI;
+
+import java.util.Optional;
 
 public class ManageExpensesController {
     public AnchorPane pneBody;
@@ -42,9 +44,42 @@ public class ManageExpensesController {
             btnEdit.getStyleClass().add("edit-button");
             btnTrash.getStyleClass().add("trash-button");
 
+            btnEdit.setOnMouseClicked(event -> updateExpense(param.getValue()));
+            btnTrash.setOnMouseClicked(event -> deleteExpense(param.getValue()));
+
             return new ReadOnlyObjectWrapper<>(new HBox(10, btnEdit, btnTrash));
         });
-        tblManageExpenses.getItems().add(new ExpenseTM());
+        loadAllExpenses();
+    }
+
+    private void updateExpense(ExpenseTM tm) {
+        try {
+            MainFormController ctrl = (MainFormController) pneBody.getScene().getUserData();
+            ctrl.navigate("/view/AddNewExpense.fxml","Manage Expense",tm);
+            System.out.println("working"+tm);
+        } catch (RuntimeException e) {
+            new Alert(Alert.AlertType.ERROR,"Failed to update the expense").show();
+        }
+    }
+
+    private void deleteExpense(ExpenseTM tm) {
+        Optional<ButtonType> buttonType= new Alert(Alert.AlertType.CONFIRMATION,"Are you sure to delete this expense?",ButtonType.NO,ButtonType.YES).showAndWait();
+        try{
+            if(buttonType.get()== ButtonType.YES){
+                ExpenseService.deleteExpense(tm.getId());
+                tblManageExpenses.getItems().remove(tm);
+            }
+        }catch (RuntimeException e){
+            new Alert(Alert.AlertType.NONE,"Failed to delete expense",ButtonType.OK).show();
+        }
+    }
+
+    private void loadAllExpenses() {
+        tblManageExpenses.getItems().clear();
+        for(Expense expense : ExpenseService.findAllExpenses()){
+            //TODO:find userName and add it into the table
+            tblManageExpenses.getItems().add(new ExpenseTM(expense.getId(),expense.getExpense(),expense.getAmount(),expense.getDate().toString(),expense.getMethod(),"userName"));
+        }
     }
 
     public void btnAddNewExpense_OnAction(ActionEvent actionEvent) {

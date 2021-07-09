@@ -1,5 +1,7 @@
 package model;
 
+import java.time.LocalDate;
+
 public class Expense {
 
     private String id;
@@ -7,16 +9,18 @@ public class Expense {
     private String expense;
     private String amount;
     private String method;
+    private LocalDate date;
 
     public Expense() {
     }
 
-    public Expense(String id, String userNic, String expense, String amount, String method) {
+    public Expense(String id, String userNic, String expense, String amount, String method, LocalDate date) {
         this.id = id;
         this.userNic = userNic;
         this.expense = expense;
         this.amount = amount;
         this.method = method;
+        this.date = date;
     }
 
     public String getId() {
@@ -57,6 +61,13 @@ public class Expense {
 
     public void setMethod(String method) {
         this.method = method;
+    }
+    public LocalDate getDate() {
+        return date;
+    }
+
+    public void setDate(LocalDate date) {
+        this.date = date;
     }
 
     @Override

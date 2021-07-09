@@ -1,11 +1,31 @@
 package model;
 
 public class ExpenseTM {
+    private String id;
     private String expense;
     private String amount;
     private String date;
     private String transactionMethod;
     private String name;
+
+    public ExpenseTM() {
+    }
+
+    public ExpenseTM(String id,String expense, String amount, String date, String transactionMethod, String name) {
+        this.id=id;
+        this.expense = expense;
+        this.amount = amount;
+        this.date = date;
+        this.transactionMethod = transactionMethod;
+        this.name = name;
+    }
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
 
     public String getExpense() {
         return expense;
