@@ -10,6 +10,8 @@ import model.Student;
 import model.StudentTM;
 import service.CourseService;
 import service.StudentService;
+import service.exception.DuplicateEntryException;
+import service.exception.NotFoundException;
 import util.DateAndTime;
 import util.MaterialUI;
 
@@ -59,7 +61,13 @@ public class StudentRegistrationController {
         Platform.runLater(()->{
             if(root.getUserData()!=null){
                 StudentTM tm = (StudentTM) root.getUserData();
-                Student student = StudentService.findStudent(tm.getNic());
+                Student student = null;
+                try {
+                    student = StudentService.findStudent(tm.getNic());
+                } catch (NotFoundException e) {
+                    e.printStackTrace();
+                    new Alert(Alert.AlertType.ERROR,"Failed to save student. Please contact DEPO!");
+                }
                 txtName.setText(student.getName());
                 txtDateOfBirth.setText(student.getDateOfBirth().toString());
                 txtEmail.setText(student.getEmail());
@@ -144,9 +152,11 @@ public class StudentRegistrationController {
                     new Alert(Alert.AlertType.NONE,"Student data has been saved successfully",ButtonType.OK).show();
                 }
             }
-        }catch (RuntimeException e){
-            new Alert(Alert.AlertType.ERROR,"Failed to save student",ButtonType.OK).show();
-            return;
+        }catch (NotFoundException e){
+            new Alert(Alert.AlertType.ERROR,"Failed to save student. Please contact DEPO!",ButtonType.OK).show();
+        }catch (DuplicateEntryException e){
+            new Alert(Alert.AlertType.ERROR, "A student already exists with entered NIC",ButtonType.OK).show();
+            txtNic.requestFocus();
         }
     }
 

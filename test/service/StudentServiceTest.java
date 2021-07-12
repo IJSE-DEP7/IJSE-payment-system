@@ -13,14 +13,18 @@ public class StudentServiceTest {
     */
 
     public static void main(String[] args) {
-        saveStudent();
-        updateStudent();
-        deleteStudent();
-        findAllStudents();
-        findStudents();
+        try {
+            saveStudent();updateStudent();
+            deleteStudent();
+            findAllStudents();
+            findStudents();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
     }
 
-    private static void saveStudent() {
+    private static void saveStudent() throws Exception{
         StudentService studentService = new StudentService();
         Student s = new Student("DEP","BSc Engineering","Test","75","address", LocalDate.now(),"email","932680963V","0711713745",true);
         studentService.saveStudent(s);
@@ -30,7 +34,7 @@ public class StudentServiceTest {
     }
 
 
-    private static void updateStudent() {
+    private static void updateStudent() throws Exception{
         StudentService studentService = new StudentService();
         Student s = new Student("DEP","BSc Engineering","New Student","75","address", LocalDate.now(),"email","932680963V","0717685593",true);
         studentService.updateStudent(s);
@@ -38,7 +42,7 @@ public class StudentServiceTest {
         assert studentService.findStudent("932680963V").getName().equals("New Student"): "failed update method";
     }
 
-    private static void deleteStudent(){
+    private static void deleteStudent() throws Exception{
         StudentService studentService = new StudentService();
         studentService.deleteStudent("932680963V");
         assert studentService.findStudent("932680963V")==null: "failed delete test";
@@ -50,7 +54,7 @@ public class StudentServiceTest {
         assert studentService.findAllStudents().size() == 1: "failed findAllStudents test";
     }
 
-    private static void findStudents() {
+    private static void findStudents() throws Exception{
         Student s3 = new Student("DEP","BSc Engineering","Dhanushka","75","address", LocalDate.now(),"email","283476987V","0775257919",true);
         Student s4 = new Student("DEP","BSc Engineering","Manoj Chandimal","75","address", LocalDate.now(),"email","932690963V","0723424678",true);
         Student s5 = new Student("DEP","BSc Engineering","Manoj Randeni","75","address", LocalDate.now(),"email","932698963V","0756767897",true);
