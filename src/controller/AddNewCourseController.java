@@ -8,6 +8,8 @@ import javafx.scene.text.Text;
 import model.Course;
 import model.CourseTM;
 import service.CourseService;
+import service.exception.DuplicateEntryException;
+import service.exception.NotFoundException;
 import util.DateAndTime;
 import util.MaterialUI;
 
@@ -36,22 +38,25 @@ public class AddNewCourseController {
     private void initwindow() {
         MaterialUI.paintTextFields(txtCourseId,txtCourseName,txtCourseFee,txtRegistrationFee,txtNoOfPayments);
         lblDateAddNewCourse.setText(DateAndTime.DateToday());
-        DateAndTime.timeNow(lbltimeAddNewCourse);
+        //DateAndTime.timeNow(lbltimeAddNewCourse);
         MaterialUI.addCheckBox(txtCourseId,txtCourseName,txtCourseFee,txtRegistrationFee,txtNoOfPayments);
         Platform.runLater(()->{
+            try {
+                if (root.getUserData() != null) {
+                    CourseTM tm = (CourseTM) root.getUserData();
+                    Course course = CourseService.findCourse(tm.getId());
+                    txtCourseId.setText(course.getId());
+                    txtCourseName.setText(course.getName());
+                    txtCourseFee.setText(course.getFee());
+                    txtRegistrationFee.setText(course.getRegFee());
+                    txtNoOfPayments.setText(course.getNumberOfInstallments());
 
-            if(root.getUserData()!=null){
-                CourseTM tm = (CourseTM) root.getUserData();
-                Course course = CourseService.findCourse(tm.getId());
-
-                txtCourseId.setText(course.getId());
-                txtCourseName.setText(course.getName());
-                txtCourseFee.setText(course.getFee());
-                txtRegistrationFee.setText(course.getRegFee());
-                txtNoOfPayments.setText(course.getNumberOfInstallments());
-
-                btnEnter.setText("Update");
-                lblTitle.setText("Update Course");
+                    btnEnter.setText("Update");
+                    lblTitle.setText("Update Course");
+                }
+            }catch(NotFoundException e){
+                e.printStackTrace();
+                new Alert(Alert.AlertType.ERROR,"Failed to update course. Please contact DEPO!");
             }
         });
     }
@@ -78,21 +83,23 @@ public class AddNewCourseController {
                 tm.setCourseName(txtCourseName.getText());
                 tm.setRegFee(txtRegistrationFee.getText());
                 tm.setNoOfInstallments(txtNoOfPayments.getText());
-                Optional<ButtonType> buttonType = new Alert(Alert.AlertType.INFORMATION,"Are you sure to change the data", ButtonType.CANCEL,ButtonType.OK).showAndWait();
+                Optional<ButtonType> buttonType = new Alert(Alert.AlertType.INFORMATION,"Are you sure to change the data?", ButtonType.CANCEL,ButtonType.OK).showAndWait();
                 if(buttonType.get()==ButtonType.OK){
                     CourseService.updateCourse(c);
                     new Alert(Alert.AlertType.INFORMATION,"Course has been updated successfully", ButtonType.OK).show();
                 }
 
             }else{
-
                 CourseService.addNewCourse(c);
                 new Alert(Alert.AlertType.INFORMATION,"Course has been saved successfully", ButtonType.OK).show();
-
             }
 
-        }catch(RuntimeException e){
-            new Alert(Alert.AlertType.ERROR,"Failed to save course", ButtonType.OK).show();
+        }catch(NotFoundException e){
+            e.printStackTrace();
+            new Alert(Alert.AlertType.ERROR,"Failed to save course. Please contact DEPO!",ButtonType.OK).show();
+        }catch(DuplicateEntryException e){
+            new Alert(Alert.AlertType.ERROR,"A course already exists with entered ID",ButtonType.OK).show();
+            txtCourseId.requestFocus();
         }
     }
 }

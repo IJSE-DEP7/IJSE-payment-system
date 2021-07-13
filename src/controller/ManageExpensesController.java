@@ -56,7 +56,7 @@ public class ManageExpensesController {
         try {
             MainFormController ctrl = (MainFormController) pneBody.getScene().getUserData();
             ctrl.navigate("/view/AddNewExpense.fxml","Manage Expense",tm);
-            System.out.println("working"+tm);
+
         } catch (RuntimeException e) {
             new Alert(Alert.AlertType.ERROR,"Failed to update the expense").show();
         }

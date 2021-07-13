@@ -35,7 +35,7 @@ public class AddNewExpenseController {
         MaterialUI.paintComboBox(cmbMethod);
         MaterialUI.addCheckBox(txtExpense,txtAmount,txtPassword);
         lblDate.setText(DateAndTime.DateToday());
-        DateAndTime.timeNow(lbltime);
+        //DateAndTime.timeNow(lbltime);
         Platform.runLater(() -> {
         if(root.getUserData()!=null) {
             ExpenseTM tm = (ExpenseTM) root.getUserData();
@@ -56,13 +56,20 @@ public class AddNewExpenseController {
     public void btnEnter_OnAction(ActionEvent actionEvent) {
         try{
             if(btnEnter.getText().equals("Update")){
+                Expense expense = ExpenseService.findExpense(txtExpense.getId());
+
+                expense.setExpense(txtExpense.getText());
+                expense.setAmount(txtAmount.getText());
+                expense.setMethod(cmbMethod.getSelectionModel().getSelectedItem());
+
+                ExpenseService.saveExpense(expense);
                 new Alert(Alert.AlertType.INFORMATION, "Expense updated successfully", ButtonType.OK).show();
             }else {
                 ExpenseService.saveExpense(new Expense("id", "nic", txtExpense.getText(), txtAmount.getText(), cmbMethod.getSelectionModel().getSelectedItem(), LocalDate.now()));
                 new Alert(Alert.AlertType.INFORMATION, "Expense saved successfully", ButtonType.OK).show();
             }
         }catch (RuntimeException e){
-            new Alert(Alert.AlertType.ERROR,"Failed to save",ButtonType.OK).show();
+            new Alert(Alert.AlertType.ERROR,"Failed to save expense.Please contact DEPO!",ButtonType.OK).show();
         }
     }
 }

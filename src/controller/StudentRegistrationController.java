@@ -64,10 +64,7 @@ public class StudentRegistrationController {
                 Student student = null;
                 try {
                     student = StudentService.findStudent(tm.getNic());
-                } catch (NotFoundException e) {
-                    e.printStackTrace();
-                    new Alert(Alert.AlertType.ERROR,"Failed to save student. Please contact DEPO!");
-                }
+
                 txtName.setText(student.getName());
                 txtDateOfBirth.setText(student.getDateOfBirth().toString());
                 txtEmail.setText(student.getEmail());
@@ -83,7 +80,10 @@ public class StudentRegistrationController {
                     chkPartTime.setSelected(true);
                 }
                 btnSave.setText("Update");
-
+                } catch (NotFoundException e) {
+                    e.printStackTrace();
+                    new Alert(Alert.AlertType.ERROR,"Failed to find student. Please contact DEPO!");
+                }
             }
         });
 
@@ -153,6 +153,7 @@ public class StudentRegistrationController {
                 }
             }
         }catch (NotFoundException e){
+            e.printStackTrace();
             new Alert(Alert.AlertType.ERROR,"Failed to save student. Please contact DEPO!",ButtonType.OK).show();
         }catch (DuplicateEntryException e){
             new Alert(Alert.AlertType.ERROR, "A student already exists with entered NIC",ButtonType.OK).show();

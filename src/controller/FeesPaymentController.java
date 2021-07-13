@@ -12,6 +12,7 @@ import model.Student;
 import service.CourseService;
 import service.PaymentService;
 import service.StudentService;
+import service.exception.NotFoundException;
 import util.DateAndTime;
 import util.MaterialUI;
 
@@ -47,8 +48,14 @@ public class FeesPaymentController {
 
     private void initwindow() {
         Platform.runLater(()->{
+                //TODO:Handle the errors in findStudent and findPayment methods
+            txtSearchStudent.textProperty().addListener((observable, oldValue, newValue) -> {
+                try {
+                    findStudent(newValue);
+                }catch (NotFoundException e){
 
-            txtSearchStudent.textProperty().addListener((observable, oldValue, newValue) -> { findStudent(newValue); });
+                }
+            });
             if(root.getAccessibleText().equals("newPayment")){
                 if(root.getUserData()!=null){
                     Student student = (Student) root.getUserData();
@@ -61,7 +68,14 @@ public class FeesPaymentController {
                 txtSearchStudent.setPromptText("Search Payment By Id");
                 btnClearAll.setText("Delete");
                 btnSubmit.setText("Update");
-                txtSearchStudent.textProperty().addListener((observable, oldValue, newValue) -> { findPayment(newValue); });
+                txtSearchStudent.textProperty().addListener((observable, oldValue, newValue) -> {
+                    try{
+                        findPayment(newValue);
+                    }catch(NotFoundException e){
+
+                    }
+
+                });
             }
         });
 
@@ -70,20 +84,20 @@ public class FeesPaymentController {
         MaterialUI.addCheckBox(txtBatchNo,txtNextPayment,txtDescription,txtRecieptAmount,txtRecievedAmount,txtNextPaymentDate,txtSearchStudent,txtStudentEmail,txtStudentName);
         MaterialUI.drawBorder(pneBody);
         lblDate.setText(DateAndTime.DateToday());
-        DateAndTime.timeNow(lbltime);
+        //DateAndTime.timeNow(lbltime);
 
         //lblId.setText(PaymentService.getPaymentId());
 
     }
 
-    private void findPayment(String paymentId) {
+    private void findPayment(String paymentId) throws NotFoundException{
         Payment payment = PaymentService.findPayment(paymentId);
         if(payment!=null) {
+
             Student student = StudentService.findStudent(payment.getStudentNic());
             Course course = CourseService.findCourse(student.getCourseId());
-
-            txtStudentName.setText(student.getName());
             cmbCourse.setValue(course.getName());
+            txtStudentName.setText(student.getName());
             txtStudentEmail.setText(student.getEmail());
             cmbPaymentMethod.setValue(payment.getMethod());
             if (student.getBatchNo() != null) {
@@ -97,9 +111,9 @@ public class FeesPaymentController {
         }
     }
 
-    private void findStudent(String StudentNic) {
+    private void findStudent(String StudentNic) throws NotFoundException{
 
-        Student student = StudentService.findStudent(StudentNic);
+        Student  student = StudentService.findStudent(StudentNic);
         if(student !=null) {
             Course course = CourseService.findCourse(student.getCourseId());
 
@@ -110,7 +124,6 @@ public class FeesPaymentController {
                 txtBatchNo.setText(student.getBatchNo());
             }
         }
-
     }
 
 
@@ -160,6 +173,7 @@ public class FeesPaymentController {
     }
 
     private void printReciept() {
+
         System.out.println("reciept");
     }
 

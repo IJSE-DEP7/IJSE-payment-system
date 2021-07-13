@@ -1,6 +1,9 @@
 package service;
 
+import javafx.scene.control.Alert;
 import model.Expense;
+import service.exception.DuplicateEntryException;
+import service.exception.NotFoundException;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -9,9 +12,8 @@ public class ExpenseService {
 
     private static List<Expense> expenseDB = new ArrayList<>();
 
-    public static void saveExpense(Expense expense){
+    public static void saveExpense(Expense expense) {
         expenseDB.add(expense);
-        System.out.println(expense);
     }
 
     public static void updateExpense(Expense expense){
@@ -33,6 +35,7 @@ public class ExpenseService {
         }
         return null;
     }
+
 
     public static List<Expense> findExpenses(String query){
         List<Expense> result = new ArrayList<>();

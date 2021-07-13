@@ -10,6 +10,7 @@ import javafx.scene.layout.HBox;
 import model.Student;
 import model.StudentTM;
 import service.StudentService;
+import service.exception.NotFoundException;
 import util.DateAndTime;
 import util.MaterialUI;
 
@@ -73,7 +74,12 @@ public class SearchStudentsController {
         try{
             Optional<ButtonType> buttonType = new Alert(Alert.AlertType.CONFIRMATION,"Are you sure to delete this student",ButtonType.NO,ButtonType.YES).showAndWait();
             if(buttonType.get()== ButtonType.YES){
-                StudentService.deleteStudent(tm.getNic());
+                try {
+                    StudentService.deleteStudent(tm.getNic());
+                } catch (NotFoundException e) {
+                    e.printStackTrace();
+                    new Alert(Alert.AlertType.ERROR,"Failed to delete student. Please contact DEPO!",ButtonType.OK).show();
+                }
                 tblSearchStudents.getItems().remove(tm);
             }
 

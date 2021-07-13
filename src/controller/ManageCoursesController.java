@@ -17,6 +17,7 @@ import javafx.stage.StageStyle;
 import model.Course;
 import model.CourseTM;
 import service.CourseService;
+import service.exception.NotFoundException;
 import util.DateAndTime;
 import util.MaterialUI;
 
@@ -93,8 +94,9 @@ public class ManageCoursesController {
                 CourseService.deleteCourse(tm.getId());
                 tblManageCourses.getItems().remove(tm);
             }
-        }catch (RuntimeException e){
-            new Alert(Alert.AlertType.ERROR,"Failed to delete course",ButtonType.OK).show();
+        }catch (NotFoundException e){
+            e.printStackTrace();
+            new Alert(Alert.AlertType.ERROR,"Failed to delete course. Please contact DEPO!",ButtonType.OK).show();
         }
     }
 

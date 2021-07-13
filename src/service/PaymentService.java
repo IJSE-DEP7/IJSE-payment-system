@@ -33,6 +33,7 @@ public class PaymentService {
         return null;
     }
 
+
     public static List<Payment> findPayments(String query){
         List<Payment> result = new ArrayList<>();
         for(Payment payment : findAllPayments()){
